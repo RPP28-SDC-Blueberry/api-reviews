@@ -1,0 +1,33 @@
+{
+  "name": "blueberry-api-products",
+  "version": "1.0.0",
+  "description": "server and database(s) code for Project Atelier Products API",
+  "main": "/server/server.js",
+  "scripts": {
+    "test": "jest",
+    "start": "nodemon server/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RPP28-SDC-Blueberry/blueberry-api-products.git"
+  },
+  "keywords": [
+    "sdc",
+    "blueberry",
+    "atelier"
+  ],
+  "author": "Bill Roth",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RPP28-SDC-Blueberry/blueberry-api-products/issues"
+  },
+  "homepage": "https://github.com/RPP28-SDC-Blueberry/blueberry-api-products#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.11"
+  },
+  "devDependencies": {
+    "jest": "^27.0.6",
+    "supertest": "^6.1.3"
+  }
+}
