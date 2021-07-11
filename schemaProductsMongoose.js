@@ -18,13 +18,3 @@ const products = new Schema({
   features: [{}],
   related: [Number]
 });
-
-CREATE TABLE styles (
-  style_id bigserial PRIMARY KEY,
-  product_id bigint REFERENCES product_id,
-  name text,
-  original_price money,
-  default boolean,
-  photos text[][],
-  skus text[][]
-);
