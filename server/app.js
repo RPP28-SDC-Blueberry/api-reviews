@@ -7,13 +7,23 @@ app.get('/', (req, res) => {
 });
 
 app.get('/products', (req, res) => {
+  if (req.query.page === undefined) {
+    var page = 1;
+  } else {
+    var page = Number(req.query.page);
+  }
+  if (req.query.count === undefined) {
+    var count = 5;
+  } else {
+    var count = Number(req.query.count);
+  }
   db.products((error, data) => {
     if (error) {
       res.sendStatus(502);
     } else {
       res.status(200).json(data);
     }
-  })
+  }, page, count)
 });
 
 app.get('/products/:product_id', (req, res) => {

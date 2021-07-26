@@ -4,6 +4,8 @@ const app = require('../server/app.js');
 
 var randomProductId = 1;
 
+
+
 describe('Test the root path', () => {
   test("It should respond Teacup to the GET method", () => {
     return request(app)
@@ -118,7 +120,7 @@ describe('GET styles for random single product at /products/:product_id/styles',
         expect(productBody[0].results).toHaveProperty('name');
         expect(Number(productBody[0].results.original_price)).toBeGreaterThan(-1);
         expect(Number(productBody[0].results.sale_price)).toBeGreaterThan(-1);
-        expect(productBody[0].default?).toBe(true) || expect(productBody[0].default?).toBe(false);
+        //expect(productBody[0].default?).toBe(true) || expect(productBody[0].default?).toBe(false);
         expect(productBody[0]).toHaveProperty('photos');
         expect(productBody[0].photos).toHaveProperty('thumbnail_url');
         expect(productBody[0].photos).toHaveProperty('url');
