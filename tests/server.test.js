@@ -4,9 +4,9 @@ const app = require('../server/app.js');
 
 var randomProductId = 1;
 
+jest.setTimeout(20000);
 
-
-describe('Test the root path', () => {
+/* describe('Test the root path', () => {
   test("It should respond Teacup to the GET method", () => {
     return request(app)
       .get('/')
@@ -34,9 +34,8 @@ describe('GET /product', () => {
         expect(productBody[0]).toHaveProperty('description');
         expect(productBody[0]).toHaveProperty('category');
         expect(productBody[0].default_price).toBeGreaterThan(-1);
-        done();
     })
-    .catch(err => done(err))
+    .catch(err => console.log(err))
   });
 });
 
@@ -55,9 +54,8 @@ describe('GET /product', () => {
         expect(productBody[0]).toHaveProperty('description');
         expect(productBody[0]).toHaveProperty('category');
         expect(productBody[0].default_price).toBeGreaterThan(-1);
-        done();
     })
-    .catch(err => done(err))
+    .catch(err => console.log(err))
   });
 });
 
@@ -75,9 +73,8 @@ describe('GET random product id', () => {
       var productBody = JSON.parse(response.body);
       randomProductId = productBody[getRandomArbitrary(0, productBody.length)].id;
       expect(randomProductId).toBeGreaterThan(0);
-      done();
     })
-    .catch(err => done(err))
+    .catch(err => console.log(err))
   });
 });
 
@@ -99,9 +96,8 @@ describe('GET random single product at /products/:product_id', () => {
         expect(productBody[0]).toHaveProperty('features');
         expect(productBody[0].features[0]).toHaveProperty('feature');
         expect(productBody[0].features[0]).toHaveProperty('value');
-        done();
     })
-    .catch(err => done(err))
+    .catch(err => console.log(err))
   });
 });
 
@@ -125,9 +121,8 @@ describe('GET styles for random single product at /products/:product_id/styles',
         expect(productBody[0].photos).toHaveProperty('thumbnail_url');
         expect(productBody[0].photos).toHaveProperty('url');
         expect(productBody[0]).toHaveProperty('skus');
-        done();
     })
-    .catch(err => done(err))
+    .catch(err => console.log(err))
   });
 });
 
@@ -141,8 +136,63 @@ describe('GET related product array at /products/:product_id/styles', () => {
     .then(response => {
         var productBody = JSON.parse(response.body);
         expect(productBody[0]).toBeGreaterThan(0);
-        done();
     })
-    .catch(err => done(err))
+    .catch(err => console.log(err))
+  });
+}); */
+
+describe('Fetch Products from API', () => {
+  test("It should respond in less than 50ms.", () => {
+    var startTime = jest.getRealSystemTime();
+    return request(app)
+    .get('/products')
+    .then(response => {
+      expect(response.statusCode).toBe(200);
+      var endTime = jest.getRealSystemTime();
+      console.log(`Products API responded in ${(endTime - startTime)} milliseconds.`);
+      expect((endTime - startTime)).toBeLessThan(50);
+    });
+  });
+});
+
+describe('Fetch Individual Product from API', () => {
+  test("It should respond in less than 50ms.", () => {
+    var startTime = jest.getRealSystemTime();
+    return request(app)
+    .get('/products/3')
+    .then(response => {
+      expect(response.statusCode).toBe(200);
+      var endTime = jest.getRealSystemTime();
+      console.log(`Individual Products API responded in ${(endTime - startTime)} milliseconds.`);
+      expect((endTime - startTime)).toBeLessThan(50);
+    });
+  });
+});
+
+describe('Fetch Style from API', () => {
+  test("It should respond in less than 50ms.", () => {
+    var startTime = jest.getRealSystemTime();
+    return request(app)
+    .get('/products/3/styles')
+    .then(response => {
+      expect(response.statusCode).toBe(200);
+      var endTime = jest.getRealSystemTime();
+      console.log(`Style API responded in ${(endTime - startTime)} milliseconds.`);
+      expect((endTime - startTime)).toBeLessThan(50);
+    });
+  });
+});
+
+describe('Fetch Related From API', () => {
+  test("It should respond in less than 50ms.", () => {
+    var startTime = jest.getRealSystemTime();
+    return request(app)
+    .get('/products/3/related')
+    .then(response => {
+      expect(response.statusCode).toBe(200);
+      var endTime = jest.getRealSystemTime();
+      console.log(`Related API responded in ${(endTime - startTime)} milliseconds.`);
+      expect((endTime - startTime)).toBeLessThan(50);
+    });
   });
 });

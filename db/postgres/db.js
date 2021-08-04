@@ -34,7 +34,6 @@ var querySingleProduct = (id, callback) => {
     })]);
   })
   .then (function (data) {
-    console.log(data)
     var features = data[1];
     var output = data[0];
     for (var i = 0; i < features.length; i++) {
@@ -98,7 +97,6 @@ var queryRelated = (id, callback) => {
     return Number(row.related_product_id);
   })
   .then(function (data) {
-    console.log('DATA:', data);
     callback(null, data);
   })
   .catch(function (error) {

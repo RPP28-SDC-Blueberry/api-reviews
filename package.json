@@ -4,8 +4,10 @@
   "description": "server and database(s) code for Project Atelier Products API",
   "main": "/server/server.js",
   "scripts": {
-    "test": "jest --coverage",
-    "start": "nodemon server/server.js"
+    "test": "jest --runInBand",
+    "start": "nodemon server/server.js",
+    "docker": "docker exec -it 61608de590b609684a6b29b18ed9e57d6a85973e69fa33000169bcbc6bcd9fed /bin/sh",
+    "postgres": "psql -U postgres blueberry-product"
   },
   "repository": {
     "type": "git",
