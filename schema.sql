@@ -45,3 +45,6 @@ CREATE TABLE related (
   product_id bigint REFERENCES product(product_id),
   related_product_id bigint
 );
+
+-- Indexing
+
