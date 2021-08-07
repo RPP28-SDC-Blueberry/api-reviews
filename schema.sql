@@ -48,3 +48,12 @@ CREATE TABLE related (
 
 -- Indexing
 
+-- Styles
+CREATE INDEX styles_product_id_index ON styles (product_id);
+CREATE INDEX photos_style_id_index ON photos (style_id);
+CREATE INDEX skus_style_id_index ON skus (style_id);
+-- Related
+CREATE INDEX related_product_id_index ON related (product_id);
+-- Product
+CREATE INDEX product_product_id_index ON product (product_id);
+CREATE INDEX features_product_id_index ON features (product_id);
