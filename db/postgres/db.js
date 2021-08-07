@@ -14,32 +14,27 @@ var queryProducts = (callback, page = 1, count = 5) => {
 };
 
 var querySingleProduct = (id, callback) => {
-  db.one('SELECT * FROM product WHERE product_id = $1', [id])
+
+  return Promise.all([
+    db.one('SELECT * FROM product WHERE product_id = $1', [id]),
+    db.map('SELECT * FROM features WHERE product_id = $1', [id], (row, index, data) => {
+      return {feature: row.feature, value: row.value};
+    })
+  ])
+
   .then(function (data) {
     return {
-      id: Number(data.product_id),
-      name: data.name,
-      slogan: data.slogan,
-      description: data.description,
-      category: data.category,
-      default_price: data.default_price,
-      features: []
+      id: Number(data[0].product_id),
+      name: data[0].name,
+      slogan: data[0].slogan,
+      description: data[0].description,
+      category: data[0].category,
+      default_price: data[0].default_price,
+      features: data[1]
     };
   })
-  .then(function (data) {
-    return Promise.all([new Promise((resolve, reject) => {
-      resolve(data);
-    }), db.map('SELECT * FROM features WHERE product_id = $1', [data.id], (row, index, data) => {
-      return {feature: row.feature, value: row.value};
-    })]);
-  })
   .then (function (data) {
-    var features = data[1];
-    var output = data[0];
-    for (var i = 0; i < features.length; i++) {
-      output.features.push(features[i]);
-    }
-    callback(null, output);
+    callback(null, data);
   })
   .catch(function (error) {
     callback(error, null);
