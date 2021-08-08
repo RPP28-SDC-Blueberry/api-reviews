@@ -1,9 +1,18 @@
 var pgp = require('pg-promise')(/* options */);
 var db = pgp('postgres://postgres:password@localhost:5432/blueberry-product');
 
-var queryProducts = (callback, page = 1, count = 5) => {
+var queryProducts = (page = 1, count = 5, callback) => {
   var range = [((page * count) - count + 1), (page * count)];
-  db.many('SELECT product_id AS id, name, slogan, description, category, default_price FROM product WHERE product_id BETWEEN $1 AND $2', range)
+  db.map('SELECT product_id, name, slogan, description, category, default_price FROM product WHERE product_id BETWEEN $1 AND $2', range, (row, index, data) => {
+    return {
+      id: row.product_id,
+      name: row.name,
+      slogan: row.slogan,
+      description: row.description,
+      category: row.category,
+      default_price: row.default_price
+    };
+  })
   .then (function (data) {
     callback(null, data);
   })
@@ -24,7 +33,7 @@ var querySingleProduct = (id, callback) => {
 
   .then(function (data) {
     return {
-      id: Number(data[0].product_id),
+      id: data[0].product_id,
       name: data[0].name,
       slogan: data[0].slogan,
       description: data[0].description,
@@ -45,9 +54,9 @@ var querySingleProduct = (id, callback) => {
 var queryStyles = (id, callback) => {
   var styleNumbers = [];
   db.map('SELECT * FROM styles WHERE product_id = $1', [id], (row, index, data) => {
-    styleNumbers.push(Number(row.style_id));
+    styleNumbers.push(row.style_id);
     return {
-      style_id: Number(row.style_id),
+      style_id: row.style_id,
       name: row.name,
       original_price: row.original_price,
       sale_price: row.sale_price,
@@ -57,28 +66,45 @@ var queryStyles = (id, callback) => {
     };
   })
   .then(function (data) {
-
-    return Promise.all([new Promise((resolve, reject) => {
-      resolve(data);
-    }), db.map('SELECT * FROM photos WHERE style_id IN ($1:list)', [styleNumbers], (row, index, data) => {
-      return row;
-    }), db.map('SELECT * FROM skus WHERE style_id IN ($1:list)', [styleNumbers], (row, index, data) => {
-      row.product_id = id.toString();
-      return row;
-    })]);
+    if (data.length === 0) {
+      return [[], [], []];
+    }
+    return Promise.all([
+      new Promise((resolve, reject) => {
+        resolve(data);
+      }),
+      db.manyOrNone('SELECT * FROM photos WHERE style_id IN ($1:list)', [styleNumbers]),
+      db.manyOrNone('SELECT * FROM skus WHERE style_id IN ($1:list)', [styleNumbers])
+    ]);
   })
   .then (function (data) {
     var photos = data[1];
     var skus = data[2];
     var output = {
-      product_id: skus[0].product_id,
+      product_id: id,
       results: data[0]
     };
+    var skuIndex = 0;
     for (var i = 0; i < skus.length; i++) {
-      output.results[styleNumbers.indexOf(Number(skus[i].style_id))].skus[skus[i].sku_id] = {quantity: skus[i].quantity, size: skus[i].size};
+      if(skus[i].style_id === output.results[skuIndex].style_id) {
+        output.results[skuIndex].skus[skus[i].sku_id] = {quantity: skus[i].quantity, size: skus[i].size};
+      } else {
+        while (skus[i].style_id !== output.results[skuIndex].style_id) {
+          skuIndex++;
+        }
+        output.results[skuIndex].skus[skus[i].sku_id] = {quantity: skus[i].quantity, size: skus[i].size};
+      }
     }
+    var photoIndex = 0;
     for (var i = 0; i < photos.length; i++) {
-      output.results[styleNumbers.indexOf(Number(photos[i].style_id))].photos.push({thumbnail_url: photos[i].thumbnail_url, url: photos[i].url});
+      if(photos[i].style_id === output.results[photoIndex].style_id) {
+        output.results[photoIndex].photos.push({thumbnail_url: photos[i].thumbnail_url, url: photos[i].url});
+      } else {
+        while (photos[i].style_id !== output.results[photoIndex].style_id) {
+          photoIndex++;
+        }
+        output.results[photoIndex].photos.push({thumbnail_url: photos[i].thumbnail_url, url: photos[i].url});
+      }
     }
     callback(null, output);
   })

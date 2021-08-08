@@ -4,7 +4,7 @@
   "description": "server and database(s) code for Project Atelier Products API",
   "main": "/server/server.js",
   "scripts": {
-    "test": "jest --runInBand",
+    "test": "jest --runInBand --maxConcurrency=1 --coverage",
     "start": "nodemon server/server.js"
   },
   "repository": {
