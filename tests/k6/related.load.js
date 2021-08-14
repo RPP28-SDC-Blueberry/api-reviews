@@ -11,11 +11,14 @@ export default function () {
 }
 
 export let options = {
-    vus: 1,
-    duration: '5s',
-    // thresholds: {
-    //     'failed requests': ['rate<0.02'],
-    //     http_req_duration: ['p(95)<500'],
-    //     http_reqs: ['count>6000']
-    // },
+    scenarios: {
+        constant_request_rate: {
+          executor: 'constant-arrival-rate',
+          rate: 1000,
+          timeUnit: '1s', // 1000 iterations per second, i.e. 1000 RPS
+          duration: '30s',
+          preAllocatedVUs: 100, // how large the initial pool of VUs would be
+          maxVUs: 200, // if the preAllocatedVUs are not enough, we can initialize more
+        },
+      },
 };
