@@ -1,7 +1,7 @@
 version: "3.9"
 
 services:
-  node:
+  server:
     image: 127.0.0.1:5000/mnt/repos/blueberry-api-products
     build: .
     ports:
