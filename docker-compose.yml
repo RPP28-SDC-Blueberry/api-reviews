@@ -2,6 +2,7 @@ version: "3.9"
 
 services:
   server:
+    image: 127.0.0.1:5000/mnt/repos
     ports:
       - "3000:3000"
     volumes:
