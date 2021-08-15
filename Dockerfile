@@ -11,4 +11,4 @@ RUN npm install --production
 
 COPY . .
 
-CMD [ "nodemon", "server/server.js" ]
+CMD [ "node", "server/server.js" ]
