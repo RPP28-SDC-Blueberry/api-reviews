@@ -4,3 +4,18 @@
     docker ps
     docker service ps <NAME>
     docker service ls
+
+
+
+image: "node:8"
+    user: "node"
+    working_dir: /home/node/app
+    environment:
+      - NODE_ENV=production
+    volumes:
+      - ./:/home/node/app
+    expose:
+      - "8081"
+    command: "npm start"
+
+docker service create --user "node" --workdir /home/node/app --env NODE_ENV=production --mount type=bind,src=/mnt/repos,dst=/repos --name express_server node
