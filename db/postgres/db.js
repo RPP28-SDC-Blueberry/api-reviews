@@ -1,5 +1,5 @@
 var pgp = require('pg-promise')(/* options */);
-var db = pgp('postgres://postgres:password@localhost:5432/blueberry-product');
+var db = pgp('postgres://postgres:password@product_postgres:5432/blueberry-product');
 
 var queryProducts = (page = 1, count = 5, callback) => {
   var range = [((page * count) - count + 1), (page * count)];
