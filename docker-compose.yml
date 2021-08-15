@@ -2,10 +2,10 @@ version: "3.9"
 
 services:
   server:
-    image: 127.0.0.1:5000/mnt/repos
+    image: 127.0.0.1:5000/mnt/repos/blueberry-api-products
     ports:
       - "3000:3000"
     volumes:
       - type: bind
-        source: /mnt/repos
-        target: /repos
+        source: /mnt/repos/blueberry-api-products
+        target: /repos/blueberry-api-products
