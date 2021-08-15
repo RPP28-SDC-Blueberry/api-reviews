@@ -3,7 +3,7 @@ const app = express();
 const db = require('../db/postgres/db.js');
 
 app.get('/', (req, res) => {
-  res.status(418).send('Hello World!');
+  res.status(418).send('Hello, there, World!');
 });
 
 
