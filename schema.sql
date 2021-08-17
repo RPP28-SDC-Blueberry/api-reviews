@@ -46,6 +46,39 @@ CREATE TABLE related (
   related_product_id bigint
 );
 
+-- Importing
+COPY product(product_id,name,slogan,description,category,default_price)
+FROM '/csv/product.csv'
+DELIMITER ','
+CSV HEADER;
+
+COPY styles(style_id,product_id,name,sale_price,original_price,default_style)
+FROM '/csv/styles.csv'
+NULL 'null'
+DELIMITER ','
+CSV HEADER;
+
+COPY skus(sku_id,style_id,size,quantity)
+FROM '/csv/skus.csv'
+NULL 'null'
+DELIMITER ','
+CSV HEADER;
+
+COPY photos(photo_id,style_id,url,thumbnail_url)
+FROM '/csv/photos.csv'
+DELIMITER ','
+CSV HEADER;
+
+COPY features(features_id,product_id,feature,value)
+FROM '/csv/features.csv'
+DELIMITER ','
+CSV HEADER;
+
+COPY related(related_id,product_id,related_product_id)
+FROM '/csv/related.csv'
+DELIMITER ','
+CSV HEADER;
+
 -- Indexing
 
 -- Styles

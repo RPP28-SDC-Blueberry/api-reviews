@@ -3,7 +3,7 @@ import { check } from 'k6';
 
 export default function () {
     const rnd = Math.floor(Math.random() * 1000);
-    const response = http.get(`http://localhost:3000/products/${rnd}/styles`);
+    const response = http.get(`http://3.85.185.210:3000/products/${rnd}/styles`);
     check(response, {
         "is status 200": (r) => r.status === 200,
         "is id the same we asked": (r) => {

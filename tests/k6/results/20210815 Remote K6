@@ -1,0 +1,1175 @@
+Last login: Sun Aug 15 20:50:55 on ttys000
+ bill  ~  cd Code/blueberry-api-products/tests/k6/
+ bill  …  blueberry-api-products  tests  k6   bill/setup ✚ 5  k6 run pro
+ducts.load.js
+
+          /\      |‾‾| /‾‾/   /‾‾/   
+     /\  /  \     |  |/  /   /  /    
+    /  \/    \    |     (   /   ‾‾\  
+   /          \   |  |\  \ |  (‾)  | 
+  / __________ \  |__| \__\ \_____/ .io
+
+  execution: local
+     script: products.load.js
+     output: -
+
+  scenarios: (100.00%) 1 scenario, 200 max VUs, 1m0s max duration (incl. graceful stop):
+           * constant_request_rate: 1.00 iterations/s for 30s (maxVUs: 100-200, gracefulStop: 30s)
+
+
+running (0m30.1s), 000/100 VUs, 31 complete and 0 interrupted iterations
+constant_request_rate ✓ [======================================] 000/100 VUs  30s  1 iters/s
+
+     ✓ is status 200
+
+     checks.........................: 100.00% ✓ 31       ✗ 0    
+     data_received..................: 59 kB   1.9 kB/s
+     data_sent......................: 3.1 kB  102 B/s
+     http_req_blocked...............: avg=64.72ms  min=52.41ms  med=64.69ms  max=75.29ms  p(90)=70.78ms  p(95)=72.94ms 
+     http_req_connecting............: avg=64.59ms  min=52.26ms  med=64.59ms  max=75.17ms  p(90)=70.68ms  p(95)=72.8ms  
+     http_req_duration..............: avg=71.8ms   min=63.13ms  med=66.97ms  max=121.2ms  p(90)=80.48ms  p(95)=83.52ms 
+       { expected_response:true }...: avg=71.8ms   min=63.13ms  med=66.97ms  max=121.2ms  p(90)=80.48ms  p(95)=83.52ms 
+     http_req_failed................: 0.00%   ✓ 0        ✗ 31   
+     http_req_receiving.............: avg=301.41µs min=108µs    med=174µs    max=1.87ms   p(90)=373µs    p(95)=1.05ms  
+     http_req_sending...............: avg=127.54µs min=87µs     med=116µs    max=214µs    p(90)=181µs    p(95)=197.5µs 
+     http_req_tls_handshaking.......: avg=0s       min=0s       med=0s       max=0s       p(90)=0s       p(95)=0s      
+     http_req_waiting...............: avg=71.37ms  min=62.52ms  med=66.66ms  max=119.12ms p(90)=80.13ms  p(95)=83.24ms 
+     http_reqs......................: 31      1.028479/s
+     iteration_duration.............: avg=137.17ms min=124.77ms med=134.12ms max=177.21ms p(90)=145.63ms p(95)=150.34ms
+     iterations.....................: 31      1.028479/s
+     vus............................: 100     min=100    max=100
+     vus_max........................: 100     min=100    max=100
+
+ bill  …  blueberry-api-products  tests  k6   bill/setup ✚ 5  k6 run products.load.js
+
+          /\      |‾‾| /‾‾/   /‾‾/   
+     /\  /  \     |  |/  /   /  /    
+    /  \/    \    |     (   /   ‾‾\  
+   /          \   |  |\  \ |  (‾)  | 
+  / __________ \  |__| \__\ \_____/ .io
+
+  execution: local
+     script: products.load.js
+     output: -
+
+  scenarios: (100.00%) 1 scenario, 200 max VUs, 1m0s max duration (incl. graceful stop):
+           * constant_request_rate: 10.00 iterations/s for 30s (maxVUs: 100-200, gracefulStop: 30s)
+
+
+running (0m30.1s), 000/100 VUs, 301 complete and 0 interrupted iterations
+constant_request_rate ✓ [======================================] 000/100 VUs  30s  10 iters/s
+
+     ✓ is status 200
+
+     checks.........................: 100.00% ✓ 301      ✗ 0    
+     data_received..................: 605 kB  20 kB/s
+     data_sent......................: 30 kB   989 B/s
+     http_req_blocked...............: avg=55.72ms  min=44.39ms med=54.35ms  max=91.42ms  p(90)=63.66ms  p(95)=72.12ms 
+     http_req_connecting............: avg=55.55ms  min=44.18ms med=54.18ms  max=91.2ms   p(90)=63.53ms  p(95)=71.99ms 
+     http_req_duration..............: avg=57.61ms  min=47.6ms  med=55.83ms  max=107.22ms p(90)=64.36ms  p(95)=71.16ms 
+       { expected_response:true }...: avg=57.61ms  min=47.6ms  med=55.83ms  max=107.22ms p(90)=64.36ms  p(95)=71.16ms 
+     http_req_failed................: 0.00%   ✓ 0        ✗ 301  
+     http_req_receiving.............: avg=223.38µs min=65µs    med=152µs    max=1.45ms   p(90)=296µs    p(95)=981µs   
+     http_req_sending...............: avg=178.14µs min=86µs    med=155µs    max=1.33ms   p(90)=260µs    p(95)=295µs   
+     http_req_tls_handshaking.......: avg=0s       min=0s      med=0s       max=0s       p(90)=0s       p(95)=0s      
+     http_req_waiting...............: avg=57.21ms  min=47.16ms med=55.48ms  max=104.92ms p(90)=63.94ms  p(95)=70.93ms 
+     http_reqs......................: 301     9.998771/s
+     iteration_duration.............: avg=113.79ms min=97.13ms med=111.07ms max=172.02ms p(90)=129.69ms p(95)=137.98ms
+     iterations.....................: 301     9.998771/s
+     vus............................: 100     min=100    max=100
+     vus_max........................: 100     min=100    max=100
+
+ bill  …  blueberry-api-products  tests  k6   bill/setup ✚ 5  k6 run products.load.js
+
+          /\      |‾‾| /‾‾/   /‾‾/   
+     /\  /  \     |  |/  /   /  /    
+    /  \/    \    |     (   /   ‾‾\  
+   /          \   |  |\  \ |  (‾)  | 
+  / __________ \  |__| \__\ \_____/ .io
+
+  execution: local
+     script: products.load.js
+     output: -
+
+  scenarios: (100.00%) 1 scenario, 200 max VUs, 1m0s max duration (incl. graceful stop):
+           * constant_request_rate: 100.00 iterations/s for 30s (maxVUs: 100-200, gracefulStop: 30s)
+
+
+running (0m30.1s), 000/100 VUs, 3001 complete and 0 interrupted iterations
+constant_request_rate ✓ [======================================] 000/100 VUs  30s  100 iters/s
+
+     ✓ is status 200
+
+     checks.........................: 100.00% ✓ 3001      ✗ 0    
+     data_received..................: 6.0 MB  200 kB/s
+     data_sent......................: 297 kB  9.9 kB/s
+     http_req_blocked...............: avg=1.81ms   min=3µs     med=8µs     max=65.85ms  p(90)=16µs     p(95)=31µs    
+     http_req_connecting............: avg=1.79ms   min=0s      med=0s      max=65.79ms  p(90)=0s       p(95)=0s      
+     http_req_duration..............: avg=69.82ms  min=46.63ms med=52.46ms max=684.01ms p(90)=135.48ms p(95)=205.85ms
+       { expected_response:true }...: avg=69.82ms  min=46.63ms med=52.46ms max=684.01ms p(90)=135.48ms p(95)=205.85ms
+     http_req_failed................: 0.00%   ✓ 0         ✗ 3001 
+     http_req_receiving.............: avg=157.83µs min=27µs    med=110µs   max=10.02ms  p(90)=211µs    p(95)=263µs   
+     http_req_sending...............: avg=50.78µs  min=12µs    med=40µs    max=5.72ms   p(90)=81µs     p(95)=94µs    
+     http_req_tls_handshaking.......: avg=0s       min=0s      med=0s      max=0s       p(90)=0s       p(95)=0s      
+     http_req_waiting...............: avg=69.62ms  min=46.51ms med=52.28ms max=683.91ms p(90)=135.33ms p(95)=205.6ms 
+     http_reqs......................: 3001    99.841727/s
+     iteration_duration.............: avg=71.97ms  min=46.98ms med=52.79ms max=684.3ms  p(90)=137.48ms p(95)=208.62ms
+     iterations.....................: 3001    99.841727/s
+     vus............................: 100     min=100     max=100
+     vus_max........................: 100     min=100     max=100
+
+ bill  …  blueberry-api-products  tests  k6   bill/setup ✚ 5  k6 run products.load.js
+
+          /\      |‾‾| /‾‾/   /‾‾/   
+     /\  /  \     |  |/  /   /  /    
+    /  \/    \    |     (   /   ‾‾\  
+   /          \   |  |\  \ |  (‾)  | 
+  / __________ \  |__| \__\ \_____/ .io
+
+  execution: local
+     script: products.load.js
+     output: -
+
+  scenarios: (100.00%) 1 scenario, 200 max VUs, 1m0s max duration (incl. graceful stop):
+           * constant_request_rate: 250.00 iterations/s for 30s (maxVUs: 100-200, gracefulStop: 30s)
+
+
+running (0m30.1s), 000/100 VUs, 7500 complete and 0 interrupted iterations
+constant_request_rate ✓ [======================================] 000/100 VUs  30s  250 iters/s
+
+     ✓ is status 200
+
+     checks.........................: 100.00% ✓ 7500       ✗ 0    
+     data_received..................: 15 MB   498 kB/s
+     data_sent......................: 742 kB  25 kB/s
+     http_req_blocked...............: avg=1.18ms   min=3µs     med=7µs     max=119.04ms p(90)=11µs    p(95)=15µs   
+     http_req_connecting............: avg=1.17ms   min=0s      med=0s      max=118.98ms p(90)=0s      p(95)=0s     
+     http_req_duration..............: avg=73.3ms   min=54.73ms med=71.31ms max=239.65ms p(90)=88.71ms p(95)=96.54ms
+       { expected_response:true }...: avg=73.3ms   min=54.73ms med=71.31ms max=239.65ms p(90)=88.71ms p(95)=96.54ms
+     http_req_failed................: 0.00%   ✓ 0          ✗ 7500 
+     http_req_receiving.............: avg=181.67µs min=22µs    med=74µs    max=16.1ms   p(90)=167µs   p(95)=233µs  
+     http_req_sending...............: avg=41.98µs  min=12µs    med=40µs    max=1.65ms   p(90)=60.1µs  p(95)=74µs   
+     http_req_tls_handshaking.......: avg=0s       min=0s      med=0s      max=0s       p(90)=0s      p(95)=0s     
+     http_req_waiting...............: avg=73.08ms  min=54.6ms  med=71.12ms max=239.4ms  p(90)=88.54ms p(95)=96.42ms
+     http_reqs......................: 7500    249.511872/s
+     iteration_duration.............: avg=74.73ms  min=54.9ms  med=71.56ms max=338.98ms p(90)=89.16ms p(95)=98.18ms
+     iterations.....................: 7500    249.511872/s
+     vus............................: 100     min=100      max=100
+     vus_max........................: 100     min=100      max=100
+
+ bill  …  blueberry-api-products  tests  k6   bill/setup ✚ 5  k6 run products.load.js
+
+          /\      |‾‾| /‾‾/   /‾‾/   
+     /\  /  \     |  |/  /   /  /    
+    /  \/    \    |     (   /   ‾‾\  
+   /          \   |  |\  \ |  (‾)  | 
+  / __________ \  |__| \__\ \_____/ .io
+
+  execution: local
+     script: products.load.js
+     output: -
+
+  scenarios: (100.00%) 1 scenario, 200 max VUs, 1m0s max duration (incl. graceful stop):
+           * constant_request_rate: 500.00 iterations/s for 30s (maxVUs: 100-200, gracefulStop: 30s)
+
+WARN[0003] Insufficient VUs, reached 200 active VUs and cannot initialize more  executor=constant-arrival-rate scenario=constant_request_rate
+
+running (0m30.1s), 000/200 VUs, 14182 complete and 0 interrupted iterations
+constant_request_rate ✓ [======================================] 000/200 VUs  30s  500 iters/s
+
+     ✓ is status 200
+
+     checks.........................: 100.00% ✓ 14182      ✗ 0    
+     data_received..................: 28 MB   944 kB/s
+     data_sent......................: 1.4 MB  47 kB/s
+     dropped_iterations.............: 818     27.207908/s
+     http_req_blocked...............: avg=2.34ms   min=2µs     med=7µs     max=1.57s   p(90)=9µs      p(95)=15µs    
+     http_req_connecting............: avg=2.32ms   min=0s      med=0s      max=1.57s   p(90)=0s       p(95)=0s      
+     http_req_duration..............: avg=121.3ms  min=47.07ms med=65ms    max=5.15s   p(90)=115.43ms p(95)=370.26ms
+       { expected_response:true }...: avg=121.3ms  min=47.07ms med=65ms    max=5.15s   p(90)=115.43ms p(95)=370.26ms
+     http_req_failed................: 0.00%   ✓ 0          ✗ 14182
+     http_req_receiving.............: avg=159.65µs min=19µs    med=50µs    max=39.05ms p(90)=177µs    p(95)=335µs   
+     http_req_sending...............: avg=752.48µs min=9µs     med=41µs    max=5.07s   p(90)=57µs     p(95)=71µs    
+     http_req_tls_handshaking.......: avg=0s       min=0s      med=0s      max=0s      p(90)=0s       p(95)=0s      
+     http_req_waiting...............: avg=120.39ms min=46.8ms  med=64.83ms max=3.71s   p(90)=114.96ms p(95)=366.95ms
+     http_reqs......................: 14182   471.714603/s
+     iteration_duration.............: avg=123.84ms min=47.31ms med=65.22ms max=5.15s   p(90)=117.95ms p(95)=397.58ms
+     iterations.....................: 14182   471.714603/s
+     vus............................: 200     min=135      max=200
+     vus_max........................: 200     min=135      max=200
+
+ bill  …  blueberry-api-products  tests  k6   bill/setup ✚ 5  k6 run products.load.js
+
+          /\      |‾‾| /‾‾/   /‾‾/   
+     /\  /  \     |  |/  /   /  /    
+    /  \/    \    |     (   /   ‾‾\  
+   /          \   |  |\  \ |  (‾)  | 
+  / __________ \  |__| \__\ \_____/ .io
+
+  execution: local
+     script: products.load.js
+     output: -
+
+  scenarios: (100.00%) 1 scenario, 200 max VUs, 1m0s max duration (incl. graceful stop):
+           * constant_request_rate: 750.00 iterations/s for 30s (maxVUs: 100-200, gracefulStop: 30s)
+
+WARN[0001] Insufficient VUs, reached 200 active VUs and cannot initialize more  executor=constant-arrival-rate scenario=constant_request_rate
+
+running (0m30.1s), 000/200 VUs, 20870 complete and 0 interrupted iterations
+constant_request_rate ✓ [======================================] 000/200 VUs  30s  750 iters/s
+
+     ✓ is status 200
+
+     checks.........................: 100.00% ✓ 20870      ✗ 0    
+     data_received..................: 42 MB   1.4 MB/s
+     data_sent......................: 2.1 MB  69 kB/s
+     dropped_iterations.............: 1631    54.225/s
+     http_req_blocked...............: avg=1.11ms   min=2µs     med=5µs     max=227.11ms p(90)=8µs     p(95)=12µs    
+     http_req_connecting............: avg=1.1ms    min=0s      med=0s      max=226.74ms p(90)=0s      p(95)=0s      
+     http_req_duration..............: avg=94.06ms  min=48.21ms med=68.29ms max=2.31s    p(90)=86.92ms p(95)=102.48ms
+       { expected_response:true }...: avg=94.06ms  min=48.21ms med=68.29ms max=2.31s    p(90)=86.92ms p(95)=102.48ms
+     http_req_failed................: 0.00%   ✓ 0          ✗ 20870
+     http_req_receiving.............: avg=162.73µs min=18µs    med=51µs    max=26.85ms  p(90)=208.1µs p(95)=419µs   
+     http_req_sending...............: avg=40.92µs  min=9µs     med=23µs    max=58.78ms  p(90)=51µs    p(95)=60µs    
+     http_req_tls_handshaking.......: avg=0s       min=0s      med=0s      max=0s       p(90)=0s      p(95)=0s      
+     http_req_waiting...............: avg=93.86ms  min=48.13ms med=68.05ms max=2.31s    p(90)=86.71ms p(95)=102.23ms
+     http_reqs......................: 20870   693.853927/s
+     iteration_duration.............: avg=95.37ms  min=48.39ms med=68.47ms max=2.48s    p(90)=87.17ms p(95)=102.69ms
+     iterations.....................: 20870   693.853927/s
+     vus............................: 200     min=200      max=200
+     vus_max........................: 200     min=200      max=200
+
+ bill  …  blueberry-api-products  tests  k6   bill/setup ✚ 5  k6 run products.load.js
+
+          /\      |‾‾| /‾‾/   /‾‾/   
+     /\  /  \     |  |/  /   /  /    
+    /  \/    \    |     (   /   ‾‾\  
+   /          \   |  |\  \ |  (‾)  | 
+  / __________ \  |__| \__\ \_____/ .io
+
+  execution: local
+     script: products.load.js
+     output: -
+
+  scenarios: (100.00%) 1 scenario, 200 max VUs, 1m0s max duration (incl. graceful stop):
+           * constant_request_rate: 1000.00 iterations/s for 30s (maxVUs: 100-200, gracefulStop: 30s)
+
+
+running (0m30.1s), 000/142 VUs, 29930 complete and 0 interrupted iterations
+constant_request_rate ✓ [======================================] 000/142 VUs  30s  1000 iters/s
+
+     ✓ is status 200
+
+     checks.........................: 100.00% ✓ 29930      ✗ 0    
+     data_received..................: 60 MB   2.0 MB/s
+     data_sent......................: 3.0 MB  98 kB/s
+     dropped_iterations.............: 70      2.327823/s
+     http_req_blocked...............: avg=390.43µs min=2µs     med=4µs     max=133.16ms p(90)=7µs     p(95)=8µs    
+     http_req_connecting............: avg=385.64µs min=0s      med=0s      max=133.11ms p(90)=0s      p(95)=0s     
+     http_req_duration..............: avg=70.5ms   min=48.24ms med=68.94ms max=241.01ms p(90)=81.74ms p(95)=86.6ms 
+       { expected_response:true }...: avg=70.5ms   min=48.24ms med=68.94ms max=241.01ms p(90)=81.74ms p(95)=86.6ms 
+     http_req_failed................: 0.00%   ✓ 0          ✗ 29930
+     http_req_receiving.............: avg=153.38µs min=17µs    med=51µs    max=99.49ms  p(90)=220µs   p(95)=413µs  
+     http_req_sending...............: avg=21.85µs  min=8µs     med=15µs    max=2.22ms   p(90)=36µs    p(95)=44µs   
+     http_req_tls_handshaking.......: avg=0s       min=0s      med=0s      max=0s       p(90)=0s      p(95)=0s     
+     http_req_waiting...............: avg=70.33ms  min=48.2ms  med=68.79ms max=233.04ms p(90)=81.55ms p(95)=86.38ms
+     http_reqs......................: 29930   995.310402/s
+     iteration_duration.............: avg=71.05ms  min=48.46ms med=69.09ms max=248.71ms p(90)=81.96ms p(95)=86.96ms
+     iterations.....................: 29930   995.310402/s
+     vus............................: 142     min=132      max=142
+     vus_max........................: 142     min=132      max=142
+
+ bill  …  blueberry-api-products  tests  k6   bill/setup ✚ 5  k6 run product.load.js
+
+          /\      |‾‾| /‾‾/   /‾‾/   
+     /\  /  \     |  |/  /   /  /    
+    /  \/    \    |     (   /   ‾‾\  
+   /          \   |  |\  \ |  (‾)  | 
+  / __________ \  |__| \__\ \_____/ .io
+
+  execution: local
+     script: product.load.js
+     output: -
+
+  scenarios: (100.00%) 1 scenario, 200 max VUs, 1m0s max duration (incl. graceful stop):
+           * constant_request_rate: 1.00 iterations/s for 30s (maxVUs: 100-200, gracefulStop: 30s)
+
+
+running (0m30.1s), 000/100 VUs, 31 complete and 0 interrupted iterations
+constant_request_rate ✓ [======================================] 000/100 VUs  30s  1 iters/s
+
+     ✓ is status 200
+     ✓ is id the same we asked
+
+     checks.........................: 100.00% ✓ 62       ✗ 0    
+     data_received..................: 22 kB   734 B/s
+     data_sent......................: 2.9 kB  98 B/s
+     http_req_blocked...............: avg=75.99ms  min=60.32ms  med=66.75ms  max=175.88ms p(90)=72.71ms  p(95)=158.59ms
+     http_req_connecting............: avg=75.83ms  min=60.2ms   med=66.59ms  max=175.77ms p(90)=72.62ms  p(95)=158.47ms
+     http_req_duration..............: avg=87.68ms  min=55.92ms  med=79.27ms  max=203.45ms p(90)=136.68ms p(95)=167.33ms
+       { expected_response:true }...: avg=87.68ms  min=55.92ms  med=79.27ms  max=203.45ms p(90)=136.68ms p(95)=167.33ms
+     http_req_failed................: 0.00%   ✓ 0        ✗ 31   
+     http_req_receiving.............: avg=183.29µs min=93µs     med=164µs    max=599µs    p(90)=262µs    p(95)=267.5µs 
+     http_req_sending...............: avg=160.64µs min=89µs     med=127µs    max=1.08ms   p(90)=163µs    p(95)=175µs   
+     http_req_tls_handshaking.......: avg=0s       min=0s       med=0s       max=0s       p(90)=0s       p(95)=0s      
+     http_req_waiting...............: avg=87.33ms  min=55.66ms  med=78.93ms  max=203.21ms p(90)=135ms    p(95)=167.1ms 
+     http_reqs......................: 31      1.028443/s
+     iteration_duration.............: avg=164.38ms min=127.04ms med=145.19ms max=379.15ms p(90)=212.38ms p(95)=327ms   
+     iterations.....................: 31      1.028443/s
+     vus............................: 100     min=100    max=100
+     vus_max........................: 100     min=100    max=100
+
+ bill  …  blueberry-api-products  tests  k6   bill/setup ✚ 5  k6 run product.load.js
+
+          /\      |‾‾| /‾‾/   /‾‾/   
+     /\  /  \     |  |/  /   /  /    
+    /  \/    \    |     (   /   ‾‾\  
+   /          \   |  |\  \ |  (‾)  | 
+  / __________ \  |__| \__\ \_____/ .io
+
+  execution: local
+     script: product.load.js
+     output: -
+
+  scenarios: (100.00%) 1 scenario, 200 max VUs, 1m0s max duration (incl. graceful stop):
+           * constant_request_rate: 10.00 iterations/s for 30s (maxVUs: 100-200, gracefulStop: 30s)
+
+
+running (0m30.1s), 000/100 VUs, 301 complete and 0 interrupted iterations
+constant_request_rate ✓ [======================================] 000/100 VUs  30s  10 iters/s
+
+     ✓ is status 200
+     ✓ is id the same we asked
+
+     checks.........................: 100.00% ✓ 602      ✗ 0    
+     data_received..................: 210 kB  7.0 kB/s
+     data_sent......................: 29 kB   949 B/s
+     http_req_blocked...............: avg=54.28ms  min=43.67ms med=53.9ms   max=104.62ms p(90)=57.06ms  p(95)=59.94ms 
+     http_req_connecting............: avg=54.14ms  min=43.5ms  med=53.78ms  max=104.49ms p(90)=56.94ms  p(95)=59.82ms 
+     http_req_duration..............: avg=58.05ms  min=47.51ms med=55.79ms  max=114.7ms  p(90)=64.49ms  p(95)=68.1ms  
+       { expected_response:true }...: avg=58.05ms  min=47.51ms med=55.79ms  max=114.7ms  p(90)=64.49ms  p(95)=68.1ms  
+     http_req_failed................: 0.00%   ✓ 0        ✗ 301  
+     http_req_receiving.............: avg=161.5µs  min=68µs    med=119µs    max=5.23ms   p(90)=215µs    p(95)=282µs   
+     http_req_sending...............: avg=143.64µs min=80µs    med=128µs    max=590µs    p(90)=201µs    p(95)=248µs   
+     http_req_tls_handshaking.......: avg=0s       min=0s      med=0s       max=0s       p(90)=0s       p(95)=0s      
+     http_req_waiting...............: avg=57.74ms  min=47.33ms med=55.52ms  max=112.06ms p(90)=64.19ms  p(95)=67.38ms 
+     http_reqs......................: 301     9.998822/s
+     iteration_duration.............: avg=112.84ms min=96.99ms med=111.55ms max=175.13ms p(90)=121.79ms p(95)=127.37ms
+     iterations.....................: 301     9.998822/s
+     vus............................: 100     min=100    max=100
+     vus_max........................: 100     min=100    max=100
+
+ bill  …  blueberry-api-products  tests  k6   bill/setup ✚ 5  k6 run product.load.js
+
+          /\      |‾‾| /‾‾/   /‾‾/   
+     /\  /  \     |  |/  /   /  /    
+    /  \/    \    |     (   /   ‾‾\  
+   /          \   |  |\  \ |  (‾)  | 
+  / __________ \  |__| \__\ \_____/ .io
+
+  execution: local
+     script: product.load.js
+     output: -
+
+  scenarios: (100.00%) 1 scenario, 200 max VUs, 1m0s max duration (incl. graceful stop):
+           * constant_request_rate: 10.00 iterations/s for 30s (maxVUs: 100-200, gracefulStop: 30s)
+
+
+running (0m30.2s), 000/100 VUs, 301 complete and 0 interrupted iterations
+constant_request_rate ✓ [======================================] 000/100 VUs  30s  10 iters/s
+
+     ✓ is status 200
+     ✓ is id the same we asked
+
+     checks.........................: 100.00% ✓ 602     ✗ 0    
+     data_received..................: 211 kB  7.0 kB/s
+     data_sent......................: 29 kB   947 B/s
+     http_req_blocked...............: avg=59.19ms  min=45.59ms  med=59.75ms  max=97.09ms  p(90)=65.87ms  p(95)=68.4ms  
+     http_req_connecting............: avg=59.04ms  min=45.48ms  med=59.59ms  max=96.93ms  p(90)=65.75ms  p(95)=68.28ms 
+     http_req_duration..............: avg=63.32ms  min=52.34ms  med=61.15ms  max=100.89ms p(90)=71.33ms  p(95)=71.99ms 
+       { expected_response:true }...: avg=63.32ms  min=52.34ms  med=61.15ms  max=100.89ms p(90)=71.33ms  p(95)=71.99ms 
+     http_req_failed................: 0.00%   ✓ 0       ✗ 301  
+     http_req_receiving.............: avg=156.89µs min=77µs     med=136µs    max=656µs    p(90)=245µs    p(95)=289µs   
+     http_req_sending...............: avg=160.28µs min=78µs     med=150µs    max=485µs    p(90)=226µs    p(95)=261µs   
+     http_req_tls_handshaking.......: avg=0s       min=0s       med=0s       max=0s       p(90)=0s       p(95)=0s      
+     http_req_waiting...............: avg=63ms     min=52.11ms  med=60.88ms  max=100.58ms p(90)=71ms     p(95)=71.68ms 
+     http_reqs......................: 301     9.97845/s
+     iteration_duration.............: avg=122.99ms min=103.15ms med=121.22ms max=168.79ms p(90)=135.02ms p(95)=139.83ms
+     iterations.....................: 301     9.97845/s
+     vus............................: 100     min=100   max=100
+     vus_max........................: 100     min=100   max=100
+
+ bill  …  blueberry-api-products  tests  k6   bill/setup ✚ 5  k6 run product.load.js
+
+          /\      |‾‾| /‾‾/   /‾‾/   
+     /\  /  \     |  |/  /   /  /    
+    /  \/    \    |     (   /   ‾‾\  
+   /          \   |  |\  \ |  (‾)  | 
+  / __________ \  |__| \__\ \_____/ .io
+
+  execution: local
+     script: product.load.js
+     output: -
+
+  scenarios: (100.00%) 1 scenario, 200 max VUs, 1m0s max duration (incl. graceful stop):
+           * constant_request_rate: 100.00 iterations/s for 30s (maxVUs: 100-200, gracefulStop: 30s)
+
+
+running (0m30.1s), 000/100 VUs, 3001 complete and 0 interrupted iterations
+constant_request_rate ✓ [======================================] 000/100 VUs  30s  100 iters/s
+
+     ✓ is status 200
+     ✓ is id the same we asked
+
+     checks.........................: 100.00% ✓ 6002      ✗ 0    
+     data_received..................: 2.1 MB  70 kB/s
+     data_sent......................: 285 kB  9.5 kB/s
+     http_req_blocked...............: avg=2.35ms   min=4µs     med=9µs     max=94.83ms  p(90)=16µs    p(95)=32µs   
+     http_req_connecting............: avg=2.34ms   min=0s      med=0s      max=94.71ms  p(90)=0s      p(95)=0s     
+     http_req_duration..............: avg=67.09ms  min=52.26ms med=65.72ms max=183.15ms p(90)=79.31ms p(95)=83.77ms
+       { expected_response:true }...: avg=67.09ms  min=52.26ms med=65.72ms max=183.15ms p(90)=79.31ms p(95)=83.77ms
+     http_req_failed................: 0.00%   ✓ 0         ✗ 3001 
+     http_req_receiving.............: avg=143.26µs min=34µs    med=132µs   max=1.88ms   p(90)=220µs   p(95)=258µs  
+     http_req_sending...............: avg=53.74µs  min=13µs    med=48µs    max=664µs    p(90)=81µs    p(95)=97µs   
+     http_req_tls_handshaking.......: avg=0s       min=0s      med=0s      max=0s       p(90)=0s      p(95)=0s     
+     http_req_waiting...............: avg=66.89ms  min=52.01ms med=65.52ms max=182.97ms p(90)=79.13ms p(95)=83.56ms
+     http_reqs......................: 3001    99.805813/s
+     iteration_duration.............: avg=69.9ms   min=52.62ms med=66.22ms max=261.44ms p(90)=80.09ms p(95)=89.94ms
+     iterations.....................: 3001    99.805813/s
+     vus............................: 100     min=100     max=100
+     vus_max........................: 100     min=100     max=100
+
+ bill  …  blueberry-api-products  tests  k6   bill/setup ✚ 5  k6 run product.load.js
+
+          /\      |‾‾| /‾‾/   /‾‾/   
+     /\  /  \     |  |/  /   /  /    
+    /  \/    \    |     (   /   ‾‾\  
+   /          \   |  |\  \ |  (‾)  | 
+  / __________ \  |__| \__\ \_____/ .io
+
+  execution: local
+     script: product.load.js
+     output: -
+
+  scenarios: (100.00%) 1 scenario, 200 max VUs, 1m0s max duration (incl. graceful stop):
+           * constant_request_rate: 250.00 iterations/s for 30s (maxVUs: 100-200, gracefulStop: 30s)
+
+
+running (0m30.0s), 000/100 VUs, 7500 complete and 0 interrupted iterations
+constant_request_rate ✓ [======================================] 000/100 VUs  30s  250 iters/s
+
+     ✓ is status 200
+     ✓ is id the same we asked
+
+     checks.........................: 100.00% ✓ 15000      ✗ 0    
+     data_received..................: 5.3 MB  176 kB/s
+     data_sent......................: 712 kB  24 kB/s
+     http_req_blocked...............: avg=915.08µs min=3µs     med=7µs     max=91.77ms  p(90)=11µs    p(95)=15µs   
+     http_req_connecting............: avg=905.93µs min=0s      med=0s      max=91.67ms  p(90)=0s      p(95)=0s     
+     http_req_duration..............: avg=57.23ms  min=46.88ms med=55.42ms max=241.51ms p(90)=64.78ms p(95)=68.06ms
+       { expected_response:true }...: avg=57.23ms  min=46.88ms med=55.42ms max=241.51ms p(90)=64.78ms p(95)=68.06ms
+     http_req_failed................: 0.00%   ✓ 0          ✗ 7500 
+     http_req_receiving.............: avg=90.23µs  min=21µs    med=75µs    max=1.43ms   p(90)=154µs   p(95)=186µs  
+     http_req_sending...............: avg=41.88µs  min=14µs    med=39µs    max=1.7ms    p(90)=59µs    p(95)=71µs   
+     http_req_tls_handshaking.......: avg=0s       min=0s      med=0s      max=0s       p(90)=0s      p(95)=0s     
+     http_req_waiting...............: avg=57.09ms  min=46.77ms med=55.29ms max=241.05ms p(90)=64.69ms p(95)=67.94ms
+     http_reqs......................: 7500    249.609536/s
+     iteration_duration.............: avg=58.45ms  min=47.2ms  med=55.75ms max=303.84ms p(90)=65.12ms p(95)=68.45ms
+     iterations.....................: 7500    249.609536/s
+     vus............................: 100     min=100      max=100
+     vus_max........................: 100     min=100      max=100
+
+ bill  …  blueberry-api-products  tests  k6   bill/setup ✚ 5  k6 run product.load.js
+
+          /\      |‾‾| /‾‾/   /‾‾/   
+     /\  /  \     |  |/  /   /  /    
+    /  \/    \    |     (   /   ‾‾\  
+   /          \   |  |\  \ |  (‾)  | 
+  / __________ \  |__| \__\ \_____/ .io
+
+  execution: local
+     script: product.load.js
+     output: -
+
+  scenarios: (100.00%) 1 scenario, 200 max VUs, 1m0s max duration (incl. graceful stop):
+           * constant_request_rate: 500.00 iterations/s for 30s (maxVUs: 100-200, gracefulStop: 30s)
+
+
+running (0m30.1s), 000/126 VUs, 14975 complete and 0 interrupted iterations
+constant_request_rate ✓ [======================================] 000/126 VUs  30s  500 iters/s
+
+     ✓ is status 200
+     ✓ is id the same we asked
+
+     checks.........................: 100.00% ✓ 29950      ✗ 0    
+     data_received..................: 11 MB   350 kB/s
+     data_sent......................: 1.4 MB  47 kB/s
+     dropped_iterations.............: 26      0.864659/s
+     http_req_blocked...............: avg=578.54µs min=2µs     med=7µs     max=93.12ms  p(90)=9µs     p(95)=12µs   
+     http_req_connecting............: avg=570.95µs min=0s      med=0s      max=93.06ms  p(90)=0s      p(95)=0s     
+     http_req_duration..............: avg=68.28ms  min=46.62ms med=64.84ms max=274.33ms p(90)=78.95ms p(95)=86.63ms
+       { expected_response:true }...: avg=68.28ms  min=46.62ms med=64.84ms max=274.33ms p(90)=78.95ms p(95)=86.63ms
+     http_req_failed................: 0.00%   ✓ 0          ✗ 14975
+     http_req_receiving.............: avg=56.4µs   min=19µs    med=44µs    max=2.06ms   p(90)=89µs    p(95)=117µs  
+     http_req_sending...............: avg=37.58µs  min=9µs     med=39µs    max=1.11ms   p(90)=53µs    p(95)=64µs   
+     http_req_tls_handshaking.......: avg=0s       min=0s      med=0s      max=0s       p(90)=0s      p(95)=0s     
+     http_req_waiting...............: avg=68.19ms  min=46.57ms med=64.73ms max=274.23ms p(90)=78.85ms p(95)=86.52ms
+     http_reqs......................: 14975   498.010071/s
+     iteration_duration.............: avg=69.11ms  min=46.77ms med=65.11ms max=285.36ms p(90)=79.19ms p(95)=86.93ms
+     iterations.....................: 14975   498.010071/s
+     vus............................: 126     min=117      max=126
+     vus_max........................: 126     min=117      max=126
+
+ bill  …  blueberry-api-products  tests  k6   bill/setup ✚ 5  k6 run product.load.js
+
+          /\      |‾‾| /‾‾/   /‾‾/   
+     /\  /  \     |  |/  /   /  /    
+    /  \/    \    |     (   /   ‾‾\  
+   /          \   |  |\  \ |  (‾)  | 
+  / __________ \  |__| \__\ \_____/ .io
+
+  execution: local
+     script: product.load.js
+     output: -
+
+  scenarios: (100.00%) 1 scenario, 200 max VUs, 1m0s max duration (incl. graceful stop):
+           * constant_request_rate: 750.00 iterations/s for 30s (maxVUs: 100-200, gracefulStop: 30s)
+
+
+running (0m30.1s), 000/164 VUs, 22416 complete and 0 interrupted iterations
+constant_request_rate ✓ [======================================] 000/164 VUs  30s  750 iters/s
+
+     ✓ is status 200
+     ✓ is id the same we asked
+
+     checks.........................: 100.00% ✓ 44832      ✗ 0    
+     data_received..................: 16 MB   525 kB/s
+     data_sent......................: 2.1 MB  71 kB/s
+     dropped_iterations.............: 84      2.79379/s
+     http_req_blocked...............: avg=562.34µs min=2µs     med=5µs     max=138.03ms p(90)=8µs     p(95)=10µs   
+     http_req_connecting............: avg=556.01µs min=0s      med=0s      max=137.95ms p(90)=0s      p(95)=0s     
+     http_req_duration..............: avg=71.44ms  min=48ms    med=69.33ms max=386.54ms p(90)=80.14ms p(95)=84.95ms
+       { expected_response:true }...: avg=71.44ms  min=48ms    med=69.33ms max=386.54ms p(90)=80.14ms p(95)=84.95ms
+     http_req_failed................: 0.00%   ✓ 0          ✗ 22416
+     http_req_receiving.............: avg=53.9µs   min=18µs    med=39µs    max=3.21ms   p(90)=85µs    p(95)=120µs  
+     http_req_sending...............: avg=30.65µs  min=8µs     med=23µs    max=1.45ms   p(90)=49µs    p(95)=56µs   
+     http_req_tls_handshaking.......: avg=0s       min=0s      med=0s      max=0s       p(90)=0s      p(95)=0s     
+     http_req_waiting...............: avg=71.36ms  min=47.9ms  med=69.25ms max=386.45ms p(90)=80.05ms p(95)=84.86ms
+     http_reqs......................: 22416   745.542907/s
+     iteration_duration.............: avg=72.22ms  min=48.34ms med=69.56ms max=386.71ms p(90)=80.35ms p(95)=85.17ms
+     iterations.....................: 22416   745.542907/s
+     vus............................: 164     min=164      max=164
+     vus_max........................: 164     min=164      max=164
+
+ bill  …  blueberry-api-products  tests  k6   bill/setup ✚ 5  k6 run product.load.js
+
+          /\      |‾‾| /‾‾/   /‾‾/   
+     /\  /  \     |  |/  /   /  /    
+    /  \/    \    |     (   /   ‾‾\  
+   /          \   |  |\  \ |  (‾)  | 
+  / __________ \  |__| \__\ \_____/ .io
+
+  execution: local
+     script: product.load.js
+     output: -
+
+  scenarios: (100.00%) 1 scenario, 200 max VUs, 1m0s max duration (incl. graceful stop):
+           * constant_request_rate: 1000.00 iterations/s for 30s (maxVUs: 100-200, gracefulStop: 30s)
+
+WARN[0001] Insufficient VUs, reached 200 active VUs and cannot initialize more  executor=constant-arrival-rate scenario=constant_request_rate
+
+running (0m30.1s), 000/200 VUs, 28615 complete and 0 interrupted iterations
+constant_request_rate ✓ [======================================] 000/200 VUs  30s  1000 iters/s
+
+     ✓ is status 200
+     ✓ is id the same we asked
+
+     checks.........................: 100.00% ✓ 57230     ✗ 0    
+     data_received..................: 20 MB   669 kB/s
+     data_sent......................: 2.7 MB  90 kB/s
+     dropped_iterations.............: 1386    46.088103/s
+     http_req_blocked...............: avg=594.44µs min=2µs     med=4µs     max=177.36ms p(90)=7µs      p(95)=8µs     
+     http_req_connecting............: avg=589.48µs min=0s      med=0s      max=177.28ms p(90)=0s       p(95)=0s      
+     http_req_duration..............: avg=102.87ms min=56.12ms med=82.53ms max=416.23ms p(90)=192.04ms p(95)=237.88ms
+       { expected_response:true }...: avg=102.87ms min=56.12ms med=82.53ms max=416.23ms p(90)=192.04ms p(95)=237.88ms
+     http_req_failed................: 0.00%   ✓ 0         ✗ 28615
+     http_req_receiving.............: avg=50.71µs  min=17µs    med=36µs    max=5.8ms    p(90)=76µs     p(95)=106µs   
+     http_req_sending...............: avg=22.03µs  min=8µs     med=16µs    max=6.17ms   p(90)=39µs     p(95)=43µs    
+     http_req_tls_handshaking.......: avg=0s       min=0s      med=0s      max=0s       p(90)=0s       p(95)=0s      
+     http_req_waiting...............: avg=102.8ms  min=56.06ms med=82.47ms max=416.13ms p(90)=191.97ms p(95)=237.71ms
+     http_reqs......................: 28615   951.52313/s
+     iteration_duration.............: avg=103.65ms min=56.26ms med=82.71ms max=416.43ms p(90)=192.47ms p(95)=243.03ms
+     iterations.....................: 28615   951.52313/s
+     vus............................: 200     min=200     max=200
+     vus_max........................: 200     min=200     max=200
+
+ bill  …  blueberry-api-products  tests  k6   bill/setup ✚ 5  k6 run related.load.js
+
+          /\      |‾‾| /‾‾/   /‾‾/   
+     /\  /  \     |  |/  /   /  /    
+    /  \/    \    |     (   /   ‾‾\  
+   /          \   |  |\  \ |  (‾)  | 
+  / __________ \  |__| \__\ \_____/ .io
+
+  execution: local
+     script: related.load.js
+     output: -
+
+  scenarios: (100.00%) 1 scenario, 200 max VUs, 1m0s max duration (incl. graceful stop):
+           * constant_request_rate: 1.00 iterations/s for 30s (maxVUs: 100-200, gracefulStop: 30s)
+
+
+running (0m30.1s), 000/100 VUs, 31 complete and 0 interrupted iterations
+constant_request_rate ✓ [======================================] 000/100 VUs  30s  1 iters/s
+
+     ✓ is status 200
+     ✓ is the result an array
+
+     checks.........................: 100.00% ✓ 62       ✗ 0    
+     data_received..................: 7.8 kB  259 B/s
+     data_sent......................: 3.2 kB  106 B/s
+     http_req_blocked...............: avg=58.16ms  min=49.79ms med=55.59ms  max=83.67ms  p(90)=67.66ms  p(95)=75.56ms 
+     http_req_connecting............: avg=58.01ms  min=49.62ms med=55.39ms  max=83.39ms  p(90)=67.53ms  p(95)=75.41ms 
+     http_req_duration..............: avg=63.76ms  min=48.04ms med=63.19ms  max=128.23ms p(90)=71.37ms  p(95)=71.79ms 
+       { expected_response:true }...: avg=63.76ms  min=48.04ms med=63.19ms  max=128.23ms p(90)=71.37ms  p(95)=71.79ms 
+     http_req_failed................: 0.00%   ✓ 0        ✗ 31   
+     http_req_receiving.............: avg=188.45µs min=88µs    med=177µs    max=425µs    p(90)=311µs    p(95)=316µs   
+     http_req_sending...............: avg=175.83µs min=90µs    med=179µs    max=330µs    p(90)=239µs    p(95)=251.5µs 
+     http_req_tls_handshaking.......: avg=0s       min=0s      med=0s       max=0s       p(90)=0s       p(95)=0s      
+     http_req_waiting...............: avg=63.4ms   min=47.69ms med=62.83ms  max=127.8ms  p(90)=70.97ms  p(95)=71.46ms 
+     http_reqs......................: 31      1.029414/s
+     iteration_duration.............: avg=122.63ms min=100.7ms med=119.24ms max=194.13ms p(90)=140.45ms p(95)=148.13ms
+     iterations.....................: 31      1.029414/s
+     vus............................: 100     min=100    max=100
+     vus_max........................: 100     min=100    max=100
+
+ bill  …  blueberry-api-products  tests  k6   bill/setup ✚ 5  k6 run related.load.js
+
+          /\      |‾‾| /‾‾/   /‾‾/   
+     /\  /  \     |  |/  /   /  /    
+    /  \/    \    |     (   /   ‾‾\  
+   /          \   |  |\  \ |  (‾)  | 
+  / __________ \  |__| \__\ \_____/ .io
+
+  execution: local
+     script: related.load.js
+     output: -
+
+  scenarios: (100.00%) 1 scenario, 200 max VUs, 1m0s max duration (incl. graceful stop):
+           * constant_request_rate: 10.00 iterations/s for 30s (maxVUs: 100-200, gracefulStop: 30s)
+
+
+running (0m30.1s), 000/100 VUs, 301 complete and 0 interrupted iterations
+constant_request_rate ✓ [======================================] 000/100 VUs  30s  10 iters/s
+
+     ✓ is status 200
+     ✓ is the result an array
+
+     checks.........................: 100.00% ✓ 602      ✗ 0    
+     data_received..................: 76 kB   2.5 kB/s
+     data_sent......................: 31 kB   1.0 kB/s
+     http_req_blocked...............: avg=60.28ms  min=49.37ms  med=57.92ms  max=461.02ms p(90)=66.16ms  p(95)=68.28ms 
+     http_req_connecting............: avg=60.11ms  min=49.15ms  med=57.77ms  max=460.86ms p(90)=66.02ms  p(95)=68.11ms 
+     http_req_duration..............: avg=62.81ms  min=51.89ms  med=60.11ms  max=93.05ms  p(90)=73.18ms  p(95)=73.78ms 
+       { expected_response:true }...: avg=62.81ms  min=51.89ms  med=60.11ms  max=93.05ms  p(90)=73.18ms  p(95)=73.78ms 
+     http_req_failed................: 0.00%   ✓ 0        ✗ 301  
+     http_req_receiving.............: avg=162.22µs min=81µs     med=149µs    max=544µs    p(90)=238µs    p(95)=278µs   
+     http_req_sending...............: avg=168.26µs min=75µs     med=159µs    max=678µs    p(90)=223µs    p(95)=244µs   
+     http_req_tls_handshaking.......: avg=0s       min=0s       med=0s       max=0s       p(90)=0s       p(95)=0s      
+     http_req_waiting...............: avg=62.48ms  min=51.52ms  med=59.72ms  max=92.62ms  p(90)=72.76ms  p(95)=73.45ms 
+     http_reqs......................: 301     9.988534/s
+     iteration_duration.............: avg=123.56ms min=103.07ms med=122.46ms max=526.52ms p(90)=135.33ms p(95)=141.77ms
+     iterations.....................: 301     9.988534/s
+     vus............................: 100     min=100    max=100
+     vus_max........................: 100     min=100    max=100
+
+ bill  …  blueberry-api-products  tests  k6   bill/setup ✚ 5  k6 run related.load.js
+
+          /\      |‾‾| /‾‾/   /‾‾/   
+     /\  /  \     |  |/  /   /  /    
+    /  \/    \    |     (   /   ‾‾\  
+   /          \   |  |\  \ |  (‾)  | 
+  / __________ \  |__| \__\ \_____/ .io
+
+  execution: local
+     script: related.load.js
+     output: -
+
+  scenarios: (100.00%) 1 scenario, 200 max VUs, 1m0s max duration (incl. graceful stop):
+           * constant_request_rate: 100.00 iterations/s for 30s (maxVUs: 100-200, gracefulStop: 30s)
+
+
+running (0m30.1s), 000/100 VUs, 3000 complete and 0 interrupted iterations
+constant_request_rate ✓ [======================================] 000/100 VUs  30s  100 iters/s
+
+     ✓ is status 200
+     ✓ is the result an array
+
+     checks.........................: 100.00% ✓ 6000      ✗ 0    
+     data_received..................: 756 kB  25 kB/s
+     data_sent......................: 309 kB  10 kB/s
+     http_req_blocked...............: avg=2.16ms   min=4µs     med=9µs     max=82.22ms  p(90)=17µs    p(95)=39.04µs 
+     http_req_connecting............: avg=2.14ms   min=0s      med=0s      max=82.09ms  p(90)=0s      p(95)=0s      
+     http_req_duration..............: avg=61.55ms  min=45.33ms med=60.82ms max=117.11ms p(90)=72.76ms p(95)=74.61ms 
+       { expected_response:true }...: avg=61.55ms  min=45.33ms med=60.82ms max=117.11ms p(90)=72.76ms p(95)=74.61ms 
+     http_req_failed................: 0.00%   ✓ 0         ✗ 3000 
+     http_req_receiving.............: avg=135.99µs min=23µs    med=123µs   max=820µs    p(90)=213µs   p(95)=247µs   
+     http_req_sending...............: avg=57.51µs  min=15µs    med=51µs    max=1.04ms   p(90)=89µs    p(95)=111.04µs
+     http_req_tls_handshaking.......: avg=0s       min=0s      med=0s      max=0s       p(90)=0s      p(95)=0s      
+     http_req_waiting...............: avg=61.35ms  min=45.17ms med=60.61ms max=116.94ms p(90)=72.56ms p(95)=74.41ms 
+     http_reqs......................: 3000    99.831215/s
+     iteration_duration.............: avg=64.16ms  min=45.62ms med=61.51ms max=184.85ms p(90)=73.92ms p(95)=80.25ms 
+     iterations.....................: 3000    99.831215/s
+     vus............................: 100     min=100     max=100
+     vus_max........................: 100     min=100     max=100
+
+ bill  …  blueberry-api-products  tests  k6   bill/setup ✚ 5  k6 run related.load.js
+
+          /\      |‾‾| /‾‾/   /‾‾/   
+     /\  /  \     |  |/  /   /  /    
+    /  \/    \    |     (   /   ‾‾\  
+   /          \   |  |\  \ |  (‾)  | 
+  / __________ \  |__| \__\ \_____/ .io
+
+  execution: local
+     script: related.load.js
+     output: -
+
+  scenarios: (100.00%) 1 scenario, 200 max VUs, 1m0s max duration (incl. graceful stop):
+           * constant_request_rate: 250.00 iterations/s for 30s (maxVUs: 100-200, gracefulStop: 30s)
+
+
+running (0m30.1s), 000/100 VUs, 7501 complete and 0 interrupted iterations
+constant_request_rate ✓ [======================================] 000/100 VUs  30s  250 iters/s
+
+     ✓ is status 200
+     ✓ is the result an array
+
+     checks.........................: 100.00% ✓ 15002      ✗ 0    
+     data_received..................: 1.9 MB  63 kB/s
+     data_sent......................: 772 kB  26 kB/s
+     http_req_blocked...............: avg=1ms      min=2µs     med=7µs     max=106.69ms p(90)=12µs    p(95)=15µs   
+     http_req_connecting............: avg=998.84µs min=0s      med=0s      max=106.64ms p(90)=0s      p(95)=0s     
+     http_req_duration..............: avg=64.75ms  min=47.58ms med=63.63ms max=234.92ms p(90)=75.31ms p(95)=79.66ms
+       { expected_response:true }...: avg=64.75ms  min=47.58ms med=63.63ms max=234.92ms p(90)=75.31ms p(95)=79.66ms
+     http_req_failed................: 0.00%   ✓ 0          ✗ 7501 
+     http_req_receiving.............: avg=87.11µs  min=20µs    med=73µs    max=729µs    p(90)=147µs   p(95)=178µs  
+     http_req_sending...............: avg=41µs     min=12µs    med=38µs    max=1.48ms   p(90)=60µs    p(95)=72µs   
+     http_req_tls_handshaking.......: avg=0s       min=0s      med=0s      max=0s       p(90)=0s      p(95)=0s     
+     http_req_waiting...............: avg=64.62ms  min=47.5ms  med=63.48ms max=234.6ms  p(90)=75.19ms p(95)=79.54ms
+     http_reqs......................: 7501    249.451737/s
+     iteration_duration.............: avg=66.06ms  min=47.86ms med=63.95ms max=274.73ms p(90)=75.76ms p(95)=80.29ms
+     iterations.....................: 7501    249.451737/s
+     vus............................: 100     min=100      max=100
+     vus_max........................: 100     min=100      max=100
+
+ bill  …  blueberry-api-products  tests  k6   bill/setup ✚ 5  k6 run related.load.js
+
+          /\      |‾‾| /‾‾/   /‾‾/   
+     /\  /  \     |  |/  /   /  /    
+    /  \/    \    |     (   /   ‾‾\  
+   /          \   |  |\  \ |  (‾)  | 
+  / __________ \  |__| \__\ \_____/ .io
+
+  execution: local
+     script: related.load.js
+     output: -
+
+  scenarios: (100.00%) 1 scenario, 200 max VUs, 1m0s max duration (incl. graceful stop):
+           * constant_request_rate: 500.00 iterations/s for 30s (maxVUs: 100-200, gracefulStop: 30s)
+
+
+running (0m30.1s), 000/108 VUs, 14993 complete and 0 interrupted iterations
+constant_request_rate ✓ [======================================] 000/108 VUs  30s  500 iters/s
+
+     ✓ is status 200
+     ✓ is the result an array
+
+     checks.........................: 100.00% ✓ 29986      ✗ 0    
+     data_received..................: 3.8 MB  126 kB/s
+     data_sent......................: 1.5 MB  51 kB/s
+     dropped_iterations.............: 8       0.266199/s
+     http_req_blocked...............: avg=624.23µs min=2µs     med=7µs     max=175.14ms p(90)=10µs    p(95)=14µs    
+     http_req_connecting............: avg=616.38µs min=0s      med=0s      max=175.06ms p(90)=0s      p(95)=0s      
+     http_req_duration..............: avg=70.54ms  min=46.99ms med=62.25ms max=694.16ms p(90)=95.14ms p(95)=106.95ms
+       { expected_response:true }...: avg=70.54ms  min=46.99ms med=62.25ms max=694.16ms p(90)=95.14ms p(95)=106.95ms
+     http_req_failed................: 0.00%   ✓ 0          ✗ 14993
+     http_req_receiving.............: avg=56.98µs  min=17µs    med=43µs    max=2.08ms   p(90)=97µs    p(95)=130µs   
+     http_req_sending...............: avg=39.62µs  min=9µs     med=40µs    max=3.44ms   p(90)=56µs    p(95)=69µs    
+     http_req_tls_handshaking.......: avg=0s       min=0s      med=0s      max=0s       p(90)=0s      p(95)=0s      
+     http_req_waiting...............: avg=70.44ms  min=46.93ms med=62.16ms max=694.09ms p(90)=95.07ms p(95)=106.8ms 
+     http_reqs......................: 14993   498.889918/s
+     iteration_duration.............: avg=71.42ms  min=47.34ms med=62.49ms max=694.39ms p(90)=96.51ms p(95)=110.3ms 
+     iterations.....................: 14993   498.889918/s
+     vus............................: 108     min=102      max=108
+     vus_max........................: 108     min=102      max=108
+
+ bill  …  blueberry-api-products  tests  k6   bill/setup ✚ 5  k6 run related.load.js
+
+          /\      |‾‾| /‾‾/   /‾‾/   
+     /\  /  \     |  |/  /   /  /    
+    /  \/    \    |     (   /   ‾‾\  
+   /          \   |  |\  \ |  (‾)  | 
+  / __________ \  |__| \__\ \_____/ .io
+
+  execution: local
+     script: related.load.js
+     output: -
+
+  scenarios: (100.00%) 1 scenario, 200 max VUs, 1m0s max duration (incl. graceful stop):
+           * constant_request_rate: 750.00 iterations/s for 30s (maxVUs: 100-200, gracefulStop: 30s)
+
+WARN[0029] Insufficient VUs, reached 200 active VUs and cannot initialize more  executor=constant-arrival-rate scenario=constant_request_rate
+
+running (0m30.2s), 000/200 VUs, 22324 complete and 0 interrupted iterations
+constant_request_rate ✓ [======================================] 000/200 VUs  30s  750 iters/s
+
+     ✓ is status 200
+     ✓ is the result an array
+
+     checks.........................: 100.00% ✓ 44648      ✗ 0    
+     data_received..................: 5.6 MB  186 kB/s
+     data_sent......................: 2.3 MB  76 kB/s
+     dropped_iterations.............: 177     5.866087/s
+     http_req_blocked...............: avg=1.13ms  min=2µs     med=5µs     max=321.7ms  p(90)=8µs     p(95)=10µs    
+     http_req_connecting............: avg=1.12ms  min=0s      med=0s      max=321.66ms p(90)=0s      p(95)=0s      
+     http_req_duration..............: avg=74.07ms min=47.99ms med=67.25ms max=358.37ms p(90)=84.63ms p(95)=112.17ms
+       { expected_response:true }...: avg=74.07ms min=47.99ms med=67.25ms max=358.37ms p(90)=84.63ms p(95)=112.17ms
+     http_req_failed................: 0.00%   ✓ 0          ✗ 22324
+     http_req_receiving.............: avg=49.68µs min=16µs    med=37µs    max=2.09ms   p(90)=76µs    p(95)=104.84µs
+     http_req_sending...............: avg=38.42µs min=8µs     med=22µs    max=6.04ms   p(90)=48µs    p(95)=54µs    
+     http_req_tls_handshaking.......: avg=0s      min=0s      med=0s      max=0s       p(90)=0s      p(95)=0s      
+     http_req_waiting...............: avg=73.98ms min=47.88ms med=67.17ms max=358.31ms p(90)=84.54ms p(95)=112.09ms
+     http_reqs......................: 22324   739.856102/s
+     iteration_duration.............: avg=75.41ms min=48.25ms med=67.47ms max=476.15ms p(90)=84.92ms p(95)=127.37ms
+     iterations.....................: 22324   739.856102/s
+     vus............................: 200     min=127      max=200
+     vus_max........................: 200     min=127      max=200
+
+ bill  …  blueberry-api-products  tests  k6   bill/setup ✚ 5  k6 run related.load.js
+
+          /\      |‾‾| /‾‾/   /‾‾/   
+     /\  /  \     |  |/  /   /  /    
+    /  \/    \    |     (   /   ‾‾\  
+   /          \   |  |\  \ |  (‾)  | 
+  / __________ \  |__| \__\ \_____/ .io
+
+  execution: local
+     script: related.load.js
+     output: -
+
+  scenarios: (100.00%) 1 scenario, 200 max VUs, 1m0s max duration (incl. graceful stop):
+           * constant_request_rate: 1000.00 iterations/s for 30s (maxVUs: 100-200, gracefulStop: 30s)
+
+WARN[0029] Insufficient VUs, reached 200 active VUs and cannot initialize more  executor=constant-arrival-rate scenario=constant_request_rate
+
+running (0m30.6s), 000/200 VUs, 29525 complete and 0 interrupted iterations
+constant_request_rate ✓ [======================================] 000/200 VUs  30s  1000 iters/s
+
+     ✓ is status 200
+     ✓ is the result an array
+
+     checks.........................: 100.00% ✓ 59050      ✗ 0    
+     data_received..................: 7.4 MB  243 kB/s
+     data_sent......................: 3.0 MB  99 kB/s
+     dropped_iterations.............: 475     15.502549/s
+     http_req_blocked...............: avg=1.06ms  min=2µs     med=4µs     max=1.59s   p(90)=6µs     p(95)=7µs    
+     http_req_connecting............: avg=1.06ms  min=0s      med=0s      max=1.59s   p(90)=0s      p(95)=0s     
+     http_req_duration..............: avg=82.22ms min=55.75ms med=77.21ms max=1.57s   p(90)=87.29ms p(95)=91.3ms 
+       { expected_response:true }...: avg=82.22ms min=55.75ms med=77.21ms max=1.57s   p(90)=87.29ms p(95)=91.3ms 
+     http_req_failed................: 0.00%   ✓ 0          ✗ 29525
+     http_req_receiving.............: avg=51.85µs min=17µs    med=35µs    max=8.94ms  p(90)=71µs    p(95)=109µs  
+     http_req_sending...............: avg=30.01µs min=8µs     med=16µs    max=19.33ms p(90)=36µs    p(95)=46µs   
+     http_req_tls_handshaking.......: avg=0s      min=0s      med=0s      max=0s      p(90)=0s      p(95)=0s     
+     http_req_waiting...............: avg=82.13ms min=55.69ms med=77.13ms max=1.57s   p(90)=87.2ms  p(95)=91.21ms
+     http_reqs......................: 29525   963.605824/s
+     iteration_duration.............: avg=83.46ms min=55.98ms med=77.38ms max=1.67s   p(90)=87.5ms  p(95)=91.62ms
+     iterations.....................: 29525   963.605824/s
+     vus............................: 200     min=168      max=200
+     vus_max........................: 200     min=168      max=200
+
+ bill  …  blueberry-api-products  tests  k6   bill/setup ✚ 5  k6 run styles.load.js
+
+          /\      |‾‾| /‾‾/   /‾‾/   
+     /\  /  \     |  |/  /   /  /    
+    /  \/    \    |     (   /   ‾‾\  
+   /          \   |  |\  \ |  (‾)  | 
+  / __________ \  |__| \__\ \_____/ .io
+
+  execution: local
+     script: styles.load.js
+     output: -
+
+  scenarios: (100.00%) 1 scenario, 200 max VUs, 1m0s max duration (incl. graceful stop):
+           * constant_request_rate: 1.00 iterations/s for 30s (maxVUs: 100-200, gracefulStop: 30s)
+
+
+running (0m30.0s), 000/100 VUs, 30 complete and 0 interrupted iterations
+constant_request_rate ✓ [======================================] 000/100 VUs  30s  1 iters/s
+
+     ✓ is status 200
+     ✓ is id the same we asked
+
+     checks.........................: 100.00% ✓ 60       ✗ 0    
+     data_received..................: 65 kB   2.2 kB/s
+     data_sent......................: 3.1 kB  102 B/s
+     http_req_blocked...............: avg=62ms     min=50.17ms  med=57.73ms  max=104.18ms p(90)=74.69ms  p(95)=76.11ms 
+     http_req_connecting............: avg=61.85ms  min=50.01ms  med=57.57ms  max=104.07ms p(90)=74.5ms   p(95)=75.92ms 
+     http_req_duration..............: avg=73.22ms  min=58.52ms  med=66.81ms  max=159.72ms p(90)=93.36ms  p(95)=94.64ms 
+       { expected_response:true }...: avg=73.22ms  min=58.52ms  med=66.81ms  max=159.72ms p(90)=93.36ms  p(95)=94.64ms 
+     http_req_failed................: 0.00%   ✓ 0        ✗ 30   
+     http_req_receiving.............: avg=242.16µs min=100µs    med=169.5µs  max=1.07ms   p(90)=330.4µs  p(95)=735.89µs
+     http_req_sending...............: avg=136.03µs min=97µs     med=129.5µs  max=216µs    p(90)=181.2µs  p(95)=202.65µs
+     http_req_tls_handshaking.......: avg=0s       min=0s       med=0s       max=0s       p(90)=0s       p(95)=0s      
+     http_req_waiting...............: avg=72.84ms  min=58.22ms  med=66.26ms  max=159.24ms p(90)=93.04ms  p(95)=94.33ms 
+     http_reqs......................: 30      0.999909/s
+     iteration_duration.............: avg=135.91ms min=110.82ms med=124.75ms max=264.73ms p(90)=161.78ms p(95)=169.13ms
+     iterations.....................: 30      0.999909/s
+     vus............................: 100     min=100    max=100
+     vus_max........................: 100     min=100    max=100
+
+ bill  …  blueberry-api-products  tests  k6   bill/setup ✚ 5  k6 run styles.load.js
+
+          /\      |‾‾| /‾‾/   /‾‾/   
+     /\  /  \     |  |/  /   /  /    
+    /  \/    \    |     (   /   ‾‾\  
+   /          \   |  |\  \ |  (‾)  | 
+  / __________ \  |__| \__\ \_____/ .io
+
+  execution: local
+     script: styles.load.js
+     output: -
+
+  scenarios: (100.00%) 1 scenario, 200 max VUs, 1m0s max duration (incl. graceful stop):
+           * constant_request_rate: 10.00 iterations/s for 30s (maxVUs: 100-200, gracefulStop: 30s)
+
+
+running (0m30.2s), 000/100 VUs, 301 complete and 0 interrupted iterations
+constant_request_rate ✓ [======================================] 000/100 VUs  30s  10 iters/s
+
+     ✓ is status 200
+     ✓ is id the same we asked
+
+     checks.........................: 100.00% ✓ 602      ✗ 0    
+     data_received..................: 772 kB  26 kB/s
+     data_sent......................: 31 kB   1.0 kB/s
+     http_req_blocked...............: avg=66.54ms  min=49.22ms  med=65.47ms max=118.42ms p(90)=81.12ms  p(95)=84.9ms  
+     http_req_connecting............: avg=66.37ms  min=48.97ms  med=65.29ms max=118.26ms p(90)=81ms     p(95)=84.77ms 
+     http_req_duration..............: avg=75.12ms  min=47.58ms  med=72ms    max=135.95ms p(90)=95.12ms  p(95)=96.18ms 
+       { expected_response:true }...: avg=75.12ms  min=47.58ms  med=72ms    max=135.95ms p(90)=95.12ms  p(95)=96.18ms 
+     http_req_failed................: 0.00%   ✓ 0        ✗ 301  
+     http_req_receiving.............: avg=243.67µs min=91µs     med=186µs   max=2.31ms   p(90)=338µs    p(95)=460µs   
+     http_req_sending...............: avg=167.72µs min=78µs     med=156µs   max=605µs    p(90)=242µs    p(95)=268µs   
+     http_req_tls_handshaking.......: avg=0s       min=0s       med=0s      max=0s       p(90)=0s       p(95)=0s      
+     http_req_waiting...............: avg=74.71ms  min=47.26ms  med=71.58ms max=135.5ms  p(90)=94.66ms  p(95)=95.69ms 
+     http_reqs......................: 301     9.981551/s
+     iteration_duration.............: avg=142.18ms min=100.44ms med=138.2ms max=227.37ms p(90)=165.46ms p(95)=174.62ms
+     iterations.....................: 301     9.981551/s
+     vus............................: 100     min=100    max=100
+     vus_max........................: 100     min=100    max=100
+
+ bill  …  blueberry-api-products  tests  k6   bill/setup ✚ 5  k6 run styles.load.js
+
+          /\      |‾‾| /‾‾/   /‾‾/   
+     /\  /  \     |  |/  /   /  /    
+    /  \/    \    |     (   /   ‾‾\  
+   /          \   |  |\  \ |  (‾)  | 
+  / __________ \  |__| \__\ \_____/ .io
+
+  execution: local
+     script: styles.load.js
+     output: -
+
+  scenarios: (100.00%) 1 scenario, 200 max VUs, 1m0s max duration (incl. graceful stop):
+           * constant_request_rate: 100.00 iterations/s for 30s (maxVUs: 100-200, gracefulStop: 30s)
+
+
+running (0m30.1s), 000/100 VUs, 3001 complete and 0 interrupted iterations
+constant_request_rate ✓ [======================================] 000/100 VUs  30s  100 iters/s
+
+     ✓ is status 200
+     ✓ is id the same we asked
+
+     checks.........................: 100.00% ✓ 6002      ✗ 0    
+     data_received..................: 7.7 MB  257 kB/s
+     data_sent......................: 306 kB  10 kB/s
+     http_req_blocked...............: avg=2.44ms   min=4µs     med=9µs     max=89.39ms  p(90)=16µs    p(95)=37µs   
+     http_req_connecting............: avg=2.43ms   min=0s      med=0s      max=89.29ms  p(90)=0s      p(95)=0s     
+     http_req_duration..............: avg=67.37ms  min=48.8ms  med=65.58ms max=253.98ms p(90)=79.27ms p(95)=83.66ms
+       { expected_response:true }...: avg=67.37ms  min=48.8ms  med=65.58ms max=253.98ms p(90)=79.27ms p(95)=83.66ms
+     http_req_failed................: 0.00%   ✓ 0         ✗ 3001 
+     http_req_receiving.............: avg=454.29µs min=29µs    med=139µs   max=133.72ms p(90)=274µs   p(95)=370µs  
+     http_req_sending...............: avg=56.85µs  min=19µs    med=50µs    max=3.05ms   p(90)=85µs    p(95)=104µs  
+     http_req_tls_handshaking.......: avg=0s       min=0s      med=0s      max=0s       p(90)=0s      p(95)=0s     
+     http_req_waiting...............: avg=66.86ms  min=48.54ms med=65.3ms  max=253.62ms p(90)=78.94ms p(95)=82.73ms
+     http_reqs......................: 3001    99.777066/s
+     iteration_duration.............: avg=70.27ms  min=49.21ms med=66.08ms max=326.8ms  p(90)=80.19ms p(95)=87.36ms
+     iterations.....................: 3001    99.777066/s
+     vus............................: 100     min=100     max=100
+     vus_max........................: 100     min=100     max=100
+
+ bill  …  blueberry-api-products  tests  k6   bill/setup ✚ 5  k6 run styles.load.js
+
+          /\      |‾‾| /‾‾/   /‾‾/   
+     /\  /  \     |  |/  /   /  /    
+    /  \/    \    |     (   /   ‾‾\  
+   /          \   |  |\  \ |  (‾)  | 
+  / __________ \  |__| \__\ \_____/ .io
+
+  execution: local
+     script: styles.load.js
+     output: -
+
+  scenarios: (100.00%) 1 scenario, 200 max VUs, 1m0s max duration (incl. graceful stop):
+           * constant_request_rate: 250.00 iterations/s for 30s (maxVUs: 100-200, gracefulStop: 30s)
+
+
+running (0m30.1s), 000/100 VUs, 7500 complete and 0 interrupted iterations
+constant_request_rate ✓ [======================================] 000/100 VUs  30s  250 iters/s
+
+     ✓ is status 200
+     ✓ is id the same we asked
+
+     checks.........................: 100.00% ✓ 15000      ✗ 0    
+     data_received..................: 20 MB   653 kB/s
+     data_sent......................: 764 kB  25 kB/s
+     http_req_blocked...............: avg=917.19µs min=3µs     med=7µs     max=86.83ms  p(90)=12µs    p(95)=16µs    
+     http_req_connecting............: avg=908.05µs min=0s      med=0s      max=86.76ms  p(90)=0s      p(95)=0s      
+     http_req_duration..............: avg=70.36ms  min=54.59ms med=69.03ms max=255.88ms p(90)=79.61ms p(95)=82.7ms  
+       { expected_response:true }...: avg=70.36ms  min=54.59ms med=69.03ms max=255.88ms p(90)=79.61ms p(95)=82.7ms  
+     http_req_failed................: 0.00%   ✓ 0          ✗ 7500 
+     http_req_receiving.............: avg=445.61µs min=21µs    med=85µs    max=135.81ms p(90)=218µs   p(95)=499.04µs
+     http_req_sending...............: avg=41.56µs  min=13µs    med=39µs    max=484µs    p(90)=63µs    p(95)=75µs    
+     http_req_tls_handshaking.......: avg=0s       min=0s      med=0s      max=0s       p(90)=0s      p(95)=0s      
+     http_req_waiting...............: avg=69.87ms  min=54.44ms med=68.63ms max=255.75ms p(90)=79.4ms  p(95)=82.28ms 
+     http_reqs......................: 7500    249.440007/s
+     iteration_duration.............: avg=71.59ms  min=54.86ms med=69.37ms max=325.99ms p(90)=79.95ms p(95)=83.3ms  
+     iterations.....................: 7500    249.440007/s
+     vus............................: 100     min=100      max=100
+     vus_max........................: 100     min=100      max=100
+
+ bill  …  blueberry-api-products  tests  k6   bill/setup ✚ 5  k6 run styles.load.js
+
+          /\      |‾‾| /‾‾/   /‾‾/   
+     /\  /  \     |  |/  /   /  /    
+    /  \/    \    |     (   /   ‾‾\  
+   /          \   |  |\  \ |  (‾)  | 
+  / __________ \  |__| \__\ \_____/ .io
+
+  execution: local
+     script: styles.load.js
+     output: -
+
+  scenarios: (100.00%) 1 scenario, 200 max VUs, 1m0s max duration (incl. graceful stop):
+           * constant_request_rate: 500.00 iterations/s for 30s (maxVUs: 100-200, gracefulStop: 30s)
+
+
+running (0m30.1s), 000/121 VUs, 14979 complete and 0 interrupted iterations
+constant_request_rate ✓ [======================================] 000/121 VUs  30s  500 iters/s
+
+     ✓ is status 200
+     ✓ is id the same we asked
+
+     checks.........................: 100.00% ✓ 29958      ✗ 0    
+     data_received..................: 39 MB   1.3 MB/s
+     data_sent......................: 1.5 MB  51 kB/s
+     dropped_iterations.............: 21      0.698432/s
+     http_req_blocked...............: avg=590.28µs min=2µs     med=6µs     max=87.43ms p(90)=9µs      p(95)=13µs    
+     http_req_connecting............: avg=582.49µs min=0s      med=0s      max=87.36ms p(90)=0s       p(95)=0s      
+     http_req_duration..............: avg=84.58ms  min=46.99ms med=72.05ms max=2.29s   p(90)=101.67ms p(95)=138.33ms
+       { expected_response:true }...: avg=84.58ms  min=46.99ms med=72.05ms max=2.29s   p(90)=101.67ms p(95)=138.33ms
+     http_req_failed................: 0.00%   ✓ 0          ✗ 14979
+     http_req_receiving.............: avg=3.95ms   min=19µs    med=64µs    max=2.04s   p(90)=578µs    p(95)=6.94ms  
+     http_req_sending...............: avg=40.2µs   min=9µs     med=31µs    max=27.9ms  p(90)=53µs     p(95)=66µs    
+     http_req_tls_handshaking.......: avg=0s       min=0s      med=0s      max=0s      p(90)=0s       p(95)=0s      
+     http_req_waiting...............: avg=80.58ms  min=46.92ms med=71.52ms max=1.98s   p(90)=95.79ms  p(95)=119.03ms
+     http_reqs......................: 14979   498.181417/s
+     iteration_duration.............: avg=85.44ms  min=47.31ms med=72.32ms max=2.29s   p(90)=102.04ms p(95)=141.97ms
+     iterations.....................: 14979   498.181417/s
+     vus............................: 121     min=121      max=121
+     vus_max........................: 121     min=121      max=121
+
+ bill  …  blueberry-api-products  tests  k6   bill/setup ✚ 5  k6 run styles.load.js
+
+          /\      |‾‾| /‾‾/   /‾‾/   
+     /\  /  \     |  |/  /   /  /    
+    /  \/    \    |     (   /   ‾‾\  
+   /          \   |  |\  \ |  (‾)  | 
+  / __________ \  |__| \__\ \_____/ .io
+
+  execution: local
+     script: styles.load.js
+     output: -
+
+  scenarios: (100.00%) 1 scenario, 200 max VUs, 1m0s max duration (incl. graceful stop):
+           * constant_request_rate: 750.00 iterations/s for 30s (maxVUs: 100-200, gracefulStop: 30s)
+
+
+running (0m30.1s), 000/181 VUs, 22411 complete and 0 interrupted iterations
+constant_request_rate ✓ [======================================] 000/181 VUs  30s  750 iters/s
+
+     ✓ is status 200
+     ✓ is id the same we asked
+
+     checks.........................: 100.00% ✓ 44822      ✗ 0    
+     data_received..................: 59 MB   1.9 MB/s
+     data_sent......................: 2.3 MB  76 kB/s
+     dropped_iterations.............: 90      2.990804/s
+     http_req_blocked...............: avg=698.3µs  min=2µs     med=5µs     max=210.62ms p(90)=8µs      p(95)=11µs    
+     http_req_connecting............: avg=691.75µs min=0s      med=0s      max=210.55ms p(90)=0s       p(95)=0s      
+     http_req_duration..............: avg=94.46ms  min=52.73ms med=88.27ms max=368.25ms p(90)=116.52ms p(95)=137.67ms
+       { expected_response:true }...: avg=94.46ms  min=52.73ms med=88.27ms max=368.25ms p(90)=116.52ms p(95)=137.67ms
+     http_req_failed................: 0.00%   ✓ 0          ✗ 22411
+     http_req_receiving.............: avg=478.66µs min=19µs    med=63µs    max=187.9ms  p(90)=415µs    p(95)=785µs   
+     http_req_sending...............: avg=31.42µs  min=9µs     med=24µs    max=2.75ms   p(90)=50µs     p(95)=56µs    
+     http_req_tls_handshaking.......: avg=0s       min=0s      med=0s      max=0s       p(90)=0s       p(95)=0s      
+     http_req_waiting...............: avg=93.95ms  min=52.68ms med=87.97ms max=368.06ms p(90)=115.86ms p(95)=135.62ms
+     http_reqs......................: 22411   744.743471/s
+     iteration_duration.............: avg=95.41ms  min=52.87ms med=88.53ms max=455.65ms p(90)=116.77ms p(95)=138.2ms 
+     iterations.....................: 22411   744.743471/s
+     vus............................: 181     min=181      max=181
+     vus_max........................: 181     min=181      max=181
+
+ bill  …  blueberry-api-products  tests  k6   bill/setup ✚ 5  k6 run styles.load.js
+
+          /\      |‾‾| /‾‾/   /‾‾/   
+     /\  /  \     |  |/  /   /  /    
+    /  \/    \    |     (   /   ‾‾\  
+   /          \   |  |\  \ |  (‾)  | 
+  / __________ \  |__| \__\ \_____/ .io
+
+  execution: local
+     script: styles.load.js
+     output: -
+
+  scenarios: (100.00%) 1 scenario, 200 max VUs, 1m0s max duration (incl. graceful stop):
+           * constant_request_rate: 1000.00 iterations/s for 30s (maxVUs: 100-200, gracefulStop: 30s)
+
+WARN[0001] Insufficient VUs, reached 200 active VUs and cannot initialize more  executor=constant-arrival-rate scenario=constant_request_rate
+
+running (0m30.2s), 000/200 VUs, 26609 complete and 0 interrupted iterations
+constant_request_rate ✓ [======================================] 000/200 VUs  30s  1000 iters/s
+
+     ✓ is status 200
+     ✓ is id the same we asked
+
+     checks.........................: 100.00% ✓ 53218      ✗ 0    
+     data_received..................: 69 MB   2.3 MB/s
+     data_sent......................: 2.7 MB  90 kB/s
+     dropped_iterations.............: 3392    112.419375/s
+     http_req_blocked...............: avg=733.59µs min=1µs     med=4µs      max=227.56ms p(90)=7µs      p(95)=8µs     
+     http_req_connecting............: avg=728.57µs min=0s      med=0s       max=227.49ms p(90)=0s       p(95)=0s      
+     http_req_duration..............: avg=212.5ms  min=88.05ms med=211.01ms max=720.09ms p(90)=264.4ms  p(95)=289.41ms
+       { expected_response:true }...: avg=212.5ms  min=88.05ms med=211.01ms max=720.09ms p(90)=264.4ms  p(95)=289.41ms
+     http_req_failed................: 0.00%   ✓ 0          ✗ 26609
+     http_req_receiving.............: avg=396.63µs min=19µs    med=66µs     max=143.16ms p(90)=440µs    p(95)=926.59µs
+     http_req_sending...............: avg=22.44µs  min=8µs     med=16µs     max=2.99ms   p(90)=37µs     p(95)=45µs    
+     http_req_tls_handshaking.......: avg=0s       min=0s      med=0s       max=0s       p(90)=0s       p(95)=0s      
+     http_req_waiting...............: avg=212.08ms min=87.98ms med=210.65ms max=720.04ms p(90)=263.76ms p(95)=288.06ms
+     http_reqs......................: 26609   881.888897/s
+     iteration_duration.............: avg=213.45ms min=88.21ms med=211.34ms max=720.28ms p(90)=265.18ms p(95)=291.25ms
+     iterations.....................: 26609   881.888897/s
+     vus............................: 200     min=200      max=200
+     vus_max........................: 200     min=200      max=200
+
+ bill  …  blueberry-api-products  tests  k6   bill/setup ✚ 5  
