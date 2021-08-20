@@ -4,7 +4,7 @@ const db = require('../db/postgres/db.js');
 
 app.use(express.static('public'));
 app.get('/', (req, res) => {
-  res.status(418).send('Hello, there, World on Monday!');
+  res.status(418).send('Hello, there, World on Thursday!');
 });
 
 

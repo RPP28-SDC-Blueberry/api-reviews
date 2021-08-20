@@ -19,3 +19,13 @@ image: "node:8"
     command: "npm start"
 
 docker service create --user "node" --workdir /home/node/app --env NODE_ENV=production --mount type=bind,src=/mnt/repos,dst=/repos --name express_server node
+
+docker run -it -d --rm -p 3000:3000 --name express-2 my-nodejs-app
+docker run --name postgres-1 -e POSTGRES_PASSWORD=password -d \
+	--name postgres-1 \
+	-e POSTGRES_PASSWORD=mysecretpassword \
+	-e PGDATA=/var/lib/postgresql/data/pgdata \
+	-v /custom/mount:/var/lib/postgresql/data \
+	postgres
+
+docker run --name postgres-1 -v /pgdata/datadir:/var/lib/postgresql/data -p 5432:5432 -e POSTGRES_PASSWORD=wowzers906password -d postgres
