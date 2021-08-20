@@ -3,7 +3,7 @@
 FROM node
 ENV NODE_ENV=production
 
-WORKDIR /repos/blueberry-api-products
+WORKDIR /blueberry-api-products
 
 COPY ["package.json", "package-lock.json*", "./"]
 
