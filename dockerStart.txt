@@ -29,3 +29,19 @@ docker run --name postgres-1 -e POSTGRES_PASSWORD=password -d \
 	postgres
 
 docker run --name postgres-1 -v /pgdata/datadir:/var/lib/postgresql/data -p 5432:5432 -e POSTGRES_PASSWORD=wowzers906password -d postgres
+
+docker run --name nginx-1 -v /host/path/nginx.conf:/etc/nginx/nginx.conf:ro -p 80:80 -d nginx
+
+http {
+  upstream express {
+    server ec2-107-22-19-123.compute-1.amazonaws.com:3000;
+    server ec2-18-207-228-108.compute-1.amazonaws.com:3000;
+  }
+
+  server {
+    listen 80;
+    location / {
+    proxy_pass http://express;
+    }
+  }
+}
