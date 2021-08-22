@@ -8,9 +8,9 @@ app.get('/', (req, res) => {
 });
 
 //Redis
-let client = require('redis').createClient(redis_url);
+let client = require('redis').createClient('redis://172.31.62.219:6379');
 let Redis = require('ioredis');
-let redis = new Redis('172.31.62.219:6379');
+let redis = new Redis('redis://172.31.62.219:6379');
 
 app.get('/products', (req, res) => {
 
