@@ -13,7 +13,12 @@ let Redis = require('ioredis');
 let redis = new Redis('redis://172.31.62.219:6379');
 
 app.get('/products', (req, res) => {
-
+  if (!req.query.page) {
+    req.query.page = 1;
+  }
+  if (!req.query.count) {
+    req.query.count = 5;
+  }
   const uid = `products_page${req.query.page.toString()}_count${req.query.count.toString()}`; //uid is unique identifier
   //check if rep details are present in cache
   client.get(uid, (error, rep)=> {
