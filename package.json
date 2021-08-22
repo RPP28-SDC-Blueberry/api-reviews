@@ -24,8 +24,10 @@
   "homepage": "https://github.com/RPP28-SDC-Blueberry/blueberry-api-products#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "ioredis": "^4.27.8",
     "pg-promise": "^10.10.2",
-    "pm2": "^5.1.0"
+    "pm2": "^5.1.0",
+    "redis": "^3.1.2"
   },
   "devDependencies": {
     "jest": "^27.0.6",

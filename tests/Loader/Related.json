@@ -1,0 +1,8 @@
+//2500/min
+[{"result_id":"ce9e1553619bd9d4a31665f07ad56f46","started_at":"2021-08-18T05:12:36.720Z","status":"ready","public_results_url":"http://loader.io/reports/764284d853b76454e2cf6060b8862886/results/ce9e1553619bd9d4a31665f07ad56f46","success":32478,"error":0,"timeout_error":13,"network_error":0,"data_sent":8631595,"data_received":5935616,"avg_response_time":8010,"avg_error_rate":0.0400110799913822},
+//5000/min
+{"result_id":"ede4ea3d2af217142ebff587701ab6dd","started_at":"2021-08-18T05:10:32.755Z","status":"ready","public_results_url":"http://loader.io/reports/764284d853b76454e2cf6060b8862886/results/ede4ea3d2af217142ebff587701ab6dd","success":0,"error":0,"timeout_error":0,"network_error":20,"data_sent":0,"data_received":1174926,"avg_response_time":1441,"avg_error_rate":100.0},
+//1000/min
+{"result_id":"5085fd200b0d7c9aadd105506924746b","started_at":"2021-08-18T05:09:13.699Z","status":"ready","public_results_url":"http://loader.io/reports/764284d853b76454e2cf6060b8862886/results/5085fd200b0d7c9aadd105506924746b","success":33867,"error":0,"timeout_error":0,"network_error":0,"data_sent":8999234,"data_received":5762509,"avg_response_time":2972,"avg_error_rate":0.0},
+//250/min
+{"result_id":"5ff1908ffe53b353c37361f7765118ba","started_at":"2021-08-18T05:01:30.399Z","status":"ready","public_results_url":"http://loader.io/reports/764284d853b76454e2cf6060b8862886/results/5ff1908ffe53b353c37361f7765118ba","success":6000,"error":0,"timeout_error":0,"network_error":0,"data_sent":1594371,"data_received":977343,"avg_response_time":9,"avg_error_rate":0.0}]
