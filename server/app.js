@@ -21,25 +21,25 @@ app.get('/products', (req, res) => {
   }
   const uid = `products_page${req.query.page.toString()}_count${req.query.count.toString()}`; //uid is unique identifier
   //check if rep details are present in cache
-  client.get(uid, (error, rep)=> {
-    if(error){
-      console.log('Query could not be fetched from Redis. Error:', error);
+  client.get(uid, (getError, getResponse)=> {
+    if(getError){
+      console.log('Query could not be fetched from Redis. Error:', getError);
     }
-    if(rep){
+    if(getResponse){
     //JSON objects need to be parsed after reading from redis, since it is stringified before being stored into cache
 
-      res.status(200).json(JSON.parse(rep));
+      res.status(200).json(JSON.parse(getResponse));
     }
     else{
-      db.products(req.query.page, req.query.count, (error, data) => {
-        if (error) {
+      db.products(req.query.page, req.query.count, (dbError, dbResponse) => {
+        if (dbError) {
           res.sendStatus(502);
         } else {
-          res.status(200).json(data);
+          res.status(200).json(dbResponse);
           //cache data received from db
-          client.set(uid, JSON.stringify(response_data),(error, result)=> {
-          if(error){
-            console.log('Data not written to Redis. Error:', error);
+          client.set(uid, JSON.stringify(dbResponse),(setError, setResponse)=> {
+          if(setError){
+            console.log('Data not written to Redis. Error:', setError);
           }})
         }
       })
